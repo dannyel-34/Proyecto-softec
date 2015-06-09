@@ -1,0 +1,65 @@
+<div class: "profesor">
+<div class="panel panel-info">
+<div class="panel-heading"></div>
+<div class="panel-body">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @profesor.nombre %>
+</p>
+
+<p>
+  <strong>Primer apellido:</strong>
+  <%= @profesor.primer_apellido %>
+</p>
+
+<p>
+  <strong>Segundo apellido:</strong>
+  <%= @profesor.segundo_apellido %>
+</p>
+
+<p>
+  <strong>Nombre completo:</strong>
+  <%= @profesor.nombre_completo %>
+</p>
+
+<p>
+  <strong>Fecha de nacimiento:</strong>
+  <%= @profesor.fch_nacimiento %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= calcular_edad(@profesor.fch_nacimiento) %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @profesor.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @profesor.telefono %>
+</p>
+
+<p>
+  <strong>Numero de cedula:</strong>
+  <%= @profesor.doc_identidad %>
+</p>
+
+<p>
+  <strong>Tipo de documento:</strong>
+  <%= @profesor.tipo_doc_id %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <%= @profesor.estado_civils_id %>
+</p>
+
+
+</div>
+</div>
+</div>

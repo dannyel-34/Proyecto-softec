@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cod:</strong>
+  <%= @sucursal.cod %>
+</p>
+
+<p>
+  <strong>Sede:</strong>
+  <%= @sucursal.sede %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @sucursal.direccion %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @sucursal.email %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_institucion_sucursal_path(@institucion, @sucursal) %> |
+<%= link_to 'Back', institucion_sucursals_path(@institucion) %>

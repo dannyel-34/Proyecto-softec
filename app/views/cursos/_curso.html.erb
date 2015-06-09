@@ -1,0 +1,10 @@
+<tr id=<%= "curso_#{curso.id}" %>>
+        <td><%= curso.nombre %></td>
+        <td><%= curso.descripcion %></td>
+        <td><%= curso.fch_ini %></td>
+        <td><%= curso.fch_fin %></td>
+        <td><%= link_to 'Mostrar', curso, class: "btn btn-info", remote: true if can? :read, Curso %></td>
+        <td><%= link_to 'Editar', edit_curso_path(curso), class: "btn btn-warning", remote: true   %></td>
+        <td><%= link_to 'Eliminar', curso, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger",  remote: true if can? :update, Curso %></td>
+        <td><%= link_to "Grupos", curso_grupos_path(curso.id), class: "btn btn-success" %></td>
+</tr>     

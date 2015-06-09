@@ -1,0 +1,123 @@
+<%= simple_form_for(@estudiante, :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
+
+  <% if @estudiante.errors.any? %>
+	<div id="error_explanation">
+  	<h2 class="alert alert-dismissible alert-success"><%= pluralize(@dato_alumno.errors.count, "error") %> prohibited this municipio from being saved:</h2>
+
+  	<ul>
+  	<% @estudiante.errors.full_messages.each do |message| %>
+    	<li><%= message %></li>
+  	<% end %>
+  	</ul>
+	</div>
+  <% end %>
+  
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel success</h3>
+  </div>
+  <div class="panel-body">
+  <div class="form-group has-success">
+  
+
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Primer nombre</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :pr_nombre, class: 'form-control', placeholder: "Primer nombre" %>
+   	</div>
+  </div>
+
+ 
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Segundo nombre</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :sr_nombre, class: 'form-control', placeholder: "Nombre" %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">primer Apellido</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :pr_apellido, class: 'form-control', placeholder: "Apellido" %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Segundo apellido</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :sr_apellido, class: 'form-control', placeholder: "Email" %>
+   	</div>
+  </div>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Fecha de nacimiento</label>
+   	<div class="col-md-4">
+      	 <%= f.text_field :fch_nacimiento, 'data-provide' => "datepicker", class: "form-control", size: "40", width: "20", heigth: "62" %>
+   	</div>
+  </div>
+  
+
+    <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Seleccione tipo de documento</label>
+   	<div class="col-md-4">
+      	<%= f.collection_select :tipo_doc_id, TipoDoc.all, :id, :nombre, class: "form-control", prompt: "Seleccione documento" %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Numero de documento</label>
+   	<div class="col-md-4">
+      <%= f.input_field :num_doc, class: "form-control", placeholder: "numero de documento" %>
+  </div>
+  
+    <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Correo electronico</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :mail, class: 'form-control', placeholder: "Email" %>
+   	</div>
+  </div>
+  
+
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Municipio</label>
+   	<div class="col-md-4">
+      	 <%= f.autocomplete_field :municipio_nombre, autocomplete_municipio_nombre_estudiante_path, :id_element =>'#id_municipio', class:"form-control input-sm" %>
+            <%= hidden_field_tag 'id_nombre' %>
+   	</div>
+  </div>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Telefono</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :telefono, class: 'form-control', placeholder: "telefono" %>
+   	</div>
+  </div>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label-left">Dirrecion</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :direccion, class: 'form-control', placeholder: "Luhar de nacimiento" %>
+   	</div>
+  </div>
+  
+   <div class="form-group">
+   	<div class="col-md-4">
+      	 Masculino: <%= f.radio_button(:genero, true) %> 
+      	 Femenino: <%= f.radio_button(:genero, false) %>
+   	</div>
+  </div>
+  
+ 
+ 
+  
+  <div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+  	<%= f.submit "Guardar", class: "btn btn-primary" %>
+	</div>
+  </div>
+</div>
+</div>
+<% end %>
+
+ 
+

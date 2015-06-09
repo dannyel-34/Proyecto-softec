@@ -1,0 +1,12 @@
+<tr id=<%= "comentario_#{comentario.id}" %>>
+    <td><div class="round-image1-50"><%= image_tag(current_user.avatar.url(:thumb)) %></td></div>
+    <td><%= comentario.asunto %></td>
+    <td><%= comentario.mensaje %></td>
+    <% if can? :manage, Comentario %>
+    <td><%= link_to 'Mostrar', comentario, class: "btn btn-info", remote: true  %></td>
+    <td><%= link_to 'Editar', edit_comentario_path(comentario), class: "btn btn-warning", remote: true  %></td>
+    <td><%= link_to 'Eliminar', comentario, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", remote: true  %></td>
+    <% elsif can? :read, Comentario %>
+    <td><%= link_to 'Mostrar', comentario, remote: true, class: "btn btn-info" %></td>
+    <% end %>
+</tr>     

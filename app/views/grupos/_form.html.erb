@@ -1,0 +1,84 @@
+<%= simple_form_for([@curso, @grupo], :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
+
+  <% if @grupo.errors.any? %>
+	<div id="error_explanation">
+  	<h2><%= pluralize(@grupo.errors.count, "error") %> prohibited this municipio from being saved:</h2>
+
+  	<ul>
+  	<% @grupo.errors.full_messages.each do |message| %>
+    	<li><%= message %></li>
+  	<% end %>
+  	</ul>
+	</div>
+  <% end %>
+
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Nombre</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :nombre, class: 'form-control' %>
+   	</div>
+  </div>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Codigo</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :cod, class: 'form-control' %>
+   	</div>
+  </div>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Fecha Inicio</label>
+   	<div class="col-md-4">
+      	 <%= f.text_field :fch_ini, 'data-provide' => "datepicker", class: "form-control", size: "40", width: "20", heigth: "62" %>
+   	</div>
+  </div>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Fecha Final</label>
+   	<div class="col-md-4">
+      	 <%= f.text_field :fch_fin, 'data-provide' => "datepicker", class: "form-control", size: "40", width: "20", heigth: "62" %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Lugar</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :lugar, class: 'form-control' %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Notas</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :notas, class: 'form-control' %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Nombre</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :maximo_alumnos, class: 'form-control' %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Maximo de alumnos</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :numero_alumnos, class: 'form-control' %>
+   	</div>
+  </div>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Numero de alumnos</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :horario, class: 'form-control' %>
+   	</div>
+  </div>
+
+  <div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+  	<%= f.submit "Guardar", class: "btn btn-sm btn-success" %>
+	</div>
+  </div>
+
+<% end %>

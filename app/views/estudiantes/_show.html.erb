@@ -1,0 +1,69 @@
+<div class="estudiante">
+  <div class="panel panel-info">
+  <div class="panel-heading">Resultado de estudiantes</div>
+  <div class="panel-body">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primer nombre:</strong>
+  <%= @estudiante.pr_nombre %>
+</p>
+
+<p>
+  <strong>Segundo nombre:</strong>
+  <%= @estudiante.sr_nombre %>
+</p>
+
+<p>
+  <strong>Primer apellido:</strong>
+  <%= @estudiante.pr_apellido %>
+</p>
+
+<p>
+  <strong>Segundo apellido:</strong>
+  <%= @estudiante.sr_apellido %>
+</p>
+
+<p>
+  <strong>Correo electronico:</strong>
+  <%= @estudiante.mail %>
+</p>
+
+<p>
+  <strong>Tipo documento:</strong>
+  <%= @estudiante.tipo_doc.nombre %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @estudiante.num_doc %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @estudiante.municipio %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  <%= mostrar_genero(@estudiante.genero) %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @estudiante.fch_nacimiento %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @estudiante.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @estudiante.telefono %>
+</p>
+</div>
+</div>
+
+</div>

@@ -1,0 +1,22 @@
+<h1>Listado comentarios</h1>
+
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>Avatar</th>
+      <th>Asunto</th>
+      <th>Mensaje</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <%= render @comentario %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo', new_comentario_path, class: "btn btn-primary", remote: true %>
+
+

@@ -1,0 +1,19 @@
+<div class='roles'>
+<div class="panel panel-info">
+<div class="panel-heading"></div>
+<div class="panel-body">  
+  
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @role.name %>
+</p>
+
+<%= link_to 'Editar', edit_role_path(@role), class: "btn btn-warning" %> |
+<%= link_to 'Atras', roles_path, class: "btn btn-success" %>
+
+
+</div>
+</div>
+</div>

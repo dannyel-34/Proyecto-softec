@@ -1,0 +1,11 @@
+<tr id=<%= "institucion_#{institucion.id}" %>>
+    <td><%= institucion.cod %></td>
+    <td><%= institucion.nombre %></td>
+    <td><%= institucion.email %></td>
+    <td><%= institucion.direccion %></td>
+    <td><%= institucion.telefono %></td>
+    <td><%= link_to 'Mostrar', institucion, class: "btn btn-info", remote: true  if can? :read, Institucion %></td>
+    <td><%= link_to 'Editar', edit_institucion_path(institucion), class: "btn btn-warning", remote: true %></td>
+    <td><%= link_to 'Eliminar', institucion, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", remote: true  if can? :read, Institucion%></td>
+    <td><%= link_to "Sucursales", institucion_sucursals_path(institucion.id), class: "btn btn-success"%></td>
+</tr>  

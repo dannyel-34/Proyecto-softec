@@ -1,0 +1,16 @@
+<div class='estado_civil'>
+<div class="panel panel-info">
+<div class="panel-heading"></div>
+<div class="panel-body">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @estado_civil.nombre %>
+</p>
+
+<%= link_to 'Editar', edit_estado_civil_path(@estado_civil), class: "btn btn-warning" %> |
+<%= link_to 'Atras', estado_civils_path, class: "btn btn-success" %>
+</div>
+</div>
+</div>

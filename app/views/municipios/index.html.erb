@@ -1,0 +1,60 @@
+<h1>Listado de municipios</h1>
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Busqueda </h3>
+  </div>
+  <div class="panel-body">
+      
+      <br>
+    <%= form_tag municipios_path, :method => 'get' do %>
+     <% content_tag :label do %>
+          <h5 class="bus">Buscar:</h5>
+         <%= text_field_tag :search, params[:search], id: "inp1", placeholder: "nombres", class: 'form-control lg-6' %>
+     <% end %>
+    <% end %>
+
+    <button class="btn btn-info btn-sm" name="nil", id="btn-1">
+        <%= image_tag("search.png") %>
+    </button>
+    
+    <br>
+  
+  </div>
+</div>
+
+<br>
+
+<br>
+
+<br>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre departamento</th>
+      <th>Nombre municipio</th>
+      <th>Nombre centro poblado</th>
+      <th>Nombre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <%= render @municipios %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo', new_municipio_path, remote: true, class: "btn btn-primary" %>
+
+<br>
+</div>
+
+<br>
+Municipios: <%= @municipios.count %>
+
+
+<br>
+<%= will_paginate @municipios, renderer: BootstrapPagination::Rails, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;', class: 'pagination pagination-sm', id: 'pag-1' %>

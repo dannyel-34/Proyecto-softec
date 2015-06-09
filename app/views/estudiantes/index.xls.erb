@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+
+  <Worksheet ss:Name="Estudiantes">
+
+    <Table>
+
+      <Row>
+          
+
+        <Cell><Data ss:Type="String">id</Data></Cell>
+
+        <Cell><Data ss:Type="String">Pr nombre</Data></Cell>
+
+        <Cell><Data ss:Type="String">Sr nombre</Data></Cell>
+        
+        <Cell><Data ss:Type="String">Pr apellido</Data></Cell>
+        
+        <Cell><Data ss:Type="String">Sr apellido</Data></Cell>
+        
+        <Cell><Data ss:Type="String">Mail</Data></Cell>
+        
+        <Cell><Data ss:Type="String">Tipo doc</Data></Cell>
+        
+        <Cell><Data ss:Type="String">Num doc</Data></Cell>
+        
+        <Cell><Data ss:Type="String">Municipio</Data></Cell>
+        
+        <Cell><Data ss:Type="String">Genero</Data></Cell>
+        
+        <Cell><Data ss:Type="String">fch nacimiento</Data></Cell>
+        
+        <Cell><Data ss:Type="String">direccion</Data></Cell>
+        
+        <Cell><Data ss:Type="String">telefono</Data></Cell>
+
+      
+
+      </Row>
+
+    <% @estudiantes.each do |estudiante| %>
+
+      <Row>
+
+        <Cell><Data ss:Type="Number"><%= estudiante.id %></Data></Cell>
+
+        <Cell><Data ss:Type="String"><%= estudiante.pr_nombre %></Data></Cell>
+        
+        <Cell><Data ss:Type="String"><%= estudiante.sr_nombre %></Data></Cell>
+        
+        <Cell><Data ss:Type="String"><%= estudiante.pr_apellido %></Data></Cell>
+        
+        <Cell><Data ss:Type="String"><%= estudiante.sr_apellido %></Data></Cell>
+        
+        <Cell><Data ss:Type="String"><%= estudiante.mail %></Data></Cell>
+        
+        <Cell><Data ss:Type="String"><%= estudiante.tipo_doc_id %></Data></Cell>
+        
+        <Cell><Data ss:Type="String"><%= estudiante.num_doc %></Data></Cell>
+        
+         <Cell><Data ss:Type="String"><%= estudiante.municipio_id %></Data></Cell>
+         
+          <Cell><Data ss:Type="String"><%= estudiante.genero %></Data></Cell>
+          
+           <Cell><Data ss:Type="String"><%= estudiante.fch_nacimiento %></Data></Cell>
+           
+            <Cell><Data ss:Type="String"><%= estudiante.direccion %></Data></Cell>
+            
+             <Cell><Data ss:Type="String"><%= estudiante.telefono %></Data></Cell>
+
+
+      </Row>
+
+    <% end %>
+
+    </Table>
+
+  </Worksheet>
+
+</Workbook>

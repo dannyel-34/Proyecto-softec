@@ -1,0 +1,16 @@
+<tr id=<%= "profesor_#{profesor.id}" %>>
+        <td><%= profesor.nombre %></td>
+        <td><%= profesor.primer_apellido %></td>
+        <td><%= profesor.segundo_apellido %></td>
+        <td><%= profesor.nombre_completo %></td>
+        <td><%= profesor.fch_nacimiento %></td>
+        <td><%= calcular_edad(profesor.fch_nacimiento) %></td>
+        <td><%= profesor.direccion %></td>
+        <td><%= profesor.telefono %></td>
+        <td><%= profesor.doc_identidad %></td>
+        <td><%= profesor.tipo_doc_id %></td>
+        <td><%= profesor.estado_civils_id %></td>
+        <td><%= link_to 'Mostrar', profesor, remote: true, class: "btn btn-info" if can? :read, Profesor %></td>
+        <td><%= link_to 'Editar', edit_profesor_path(profesor), remote: true, class: "btn btn-warning" %></td>
+        <td><%= link_to 'Eliminar', profesor, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-danger" if can? :update, Profesor %></td>
+</tr>     

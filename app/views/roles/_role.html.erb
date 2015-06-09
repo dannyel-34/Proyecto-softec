@@ -1,0 +1,6 @@
+<tr id=<%= "role_#{role.id}" %>>
+   <td><%= role.name %></td>
+   <td><%= link_to 'Mostrar', role, remote: true, class: "btn btn-info" if can? :read, Role %></td>
+   <td><%= link_to 'Editar', edit_role_path(role), remote: true, class: "btn btn-warning" %></td>
+   <td><%= link_to 'Eliminar', role, method: :delete, data: { confirm: 'Esta Seguro?' }, remote: true, class: "btn btn-danger" if can? :update, Role %></td>
+</tr>    

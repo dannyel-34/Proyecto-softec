@@ -1,0 +1,13 @@
+<tr id=<%= "municipio_#{municipio.id}" %>>
+   <td><%= municipio.nombre_departamento %></td>
+   <td><%= municipio.nombre_municipio %></td>
+   <td><%= municipio.nombre_centro_poblado %></td>
+   <td><%= municipio.nombre %></td>
+   <% if can? :manage, :all, Municipio %>
+   <td><%= link_to 'Mostrar', municipio, class: "btn btn-info",  remote: true %></td>
+   <td><%= link_to 'Editar', edit_municipio_path(municipio), class: "btn btn-warning",  remote: true %></td>
+   <td><%= link_to 'Eliminar', municipio, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-danger",  remote: true %></td>
+   <% elsif can? :read, Municipio %>
+   <td><%= link_to 'Detalles', municipio, remote: true, class: "btn btn-info" %></td>
+   <% end %>
+</tr>     

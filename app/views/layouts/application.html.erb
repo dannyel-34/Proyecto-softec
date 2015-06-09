@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Softec" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Proyecto Softec" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link rel="shortcut icon" type="image/x-icon" href="https://lh3.googleusercontent.com/JlJmXxwFRv7dIWyV8cPKno5rML2XgwlV2-49T27TaDW8S892s2bfgGthwclfBkgmfx7r=s32" />
+    <script src="/softec/app/assets/javascripts/barra.js"></script>
+    <link href="/softec/app/assets/stylesheet/barra.css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <header>
+  	<%= render 'layouts/navigation' %>
+  	  	<%= render 'layouts/navigation_links' %>
+    </header>
+    <main role="main" class="container">
+   	<div class="row">
+        	<div class="col-lg-12">
+          	<%= render 'layouts/messages' %>
+          	<%= render 'layouts/header' %>
+          	<%= yield %>
+       	</div>
+   	</div>
+   	<%= render 'layouts/footer' %>
+    </main>
+    <%= render_lazybox %> 
+  </body>
+</html>

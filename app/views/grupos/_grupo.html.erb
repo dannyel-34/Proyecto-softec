@@ -1,0 +1,14 @@
+<tr id=<%= "grupo_#{grupo.id}" %>>
+        <td><%= grupo.nombre %></td>
+        <td><%= grupo.cod %></td>
+        <td><%= grupo.fch_ini %></td>
+        <td><%= grupo.fch_fin %></td>
+        <td><%= grupo.lugar %></td>
+        <td><%= grupo.notas %></td>
+        <td><%= grupo.maximo_alumnos %></td>
+        <td><%= grupo.numero_alumnos %></td>
+        <td><%= grupo.horario %></td>
+        <td><%= link_to 'Mostrar', curso_grupo_path(@curso, grupo), class: "btn btn-info", remote: true %></td>
+        <td><%= link_to 'Editar', edit_curso_grupo_path(@curso, grupo), class: "btn btn-warning", remote: true %></td>
+        <td><%= link_to 'Eliminar', curso_grupo_path(@curso, grupo), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", remote: true %></td>
+</tr>  

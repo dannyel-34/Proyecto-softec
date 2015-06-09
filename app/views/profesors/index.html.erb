@@ -1,0 +1,28 @@
+<h1>Listado de profesores</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Primer apellido</th>
+      <th>Segundo apellido</th>
+      <th>Nombre completo</th>
+      <th>Fecha de nacimiento</th>
+      <th>Edad</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Doc identidad</th>
+      <th>Tipo doc</th>
+      <th>Estado civils</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <%= render @profesors %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo', new_profesor_path, remote: true,  class: "btn btn-info" %>

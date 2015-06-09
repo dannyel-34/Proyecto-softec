@@ -1,0 +1,109 @@
+<%# navigation styled for Bootstrap 3.0 %>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a><%= link_to (image_tag('Logo-soft.png')), class: "imagen-header" %></a>
+      
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+   
+            <li><%= link_to "Inicio", home_path %></li>
+       
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/static_pages/registros" aria-expanded="true">
+               <span class="glyphicon glyphicon-pencil"></span> Registros<span class="caret"></span>
+              </a>
+            <ul class="dropdown-menu">
+                <li><%= link_to "Cursos", cursos_path %></li>
+            
+            </ul>
+        </li>
+        
+        <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+              <span class="glyphicon glyphicon-wrench"></span> Reportes<span class="caret"></span>
+              </a>
+            <ul class="dropdown-menu">
+                <li><a href="/static_pages/reportes_asistencia">Reportes Asistencia</a></li>
+                <li><a href="/static_pages/reportes_alumnos">Reportes Alumnos</a></li>
+                <li><a href="/static_pages/reportes_jornadas"> Jornadas</a></li>
+            </ul>
+        </li>
+        
+        <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+                <span class="glyphicon glyphicon-cog"></span> Configuracion<span class="caret"></span>
+              </a>
+            <ul class="dropdown-menu">
+                <li><a href="/static_pages/configuracion_user">Configurar usuarios</a></li>
+                <li><a href="/static_pages/configuracion_preferencias"> Configurar preferencias</a></li>
+                <li><a href="/static_pages/agregar_info"> Agregar informacion</a></li>
+                <li><a href="/static_pages/configurar_grupos"> Configurar grados</a></li>
+            </ul>
+        </li>
+        
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+                <span class="glyphicon glyphicon-eye-open"></span> Consultar<span class="caret"></span>
+              </a>
+            <ul class="dropdown-menu">
+                <li><a href="/static_pages/consultar_usuarios"> Consultar usuarios</a></li>
+                <li><a href="/static_pages/consultar_alumnos">  Consultar alumnos</a></li>
+                <li><a href="/static_pages/consultar_jornadas">Consultar jornadas</a></li>
+            </ul>
+        </li>
+      
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+                <span class="glyphicon glyphicon-briefcase"></span> Admin<span class="caret"></span>
+              </a>            
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Instituciones educativas</li>
+                <li><%= link_to "Instituciones", institucions_path %></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Directivos</li>
+                <li><%= link_to "Docentes", profesors_path %></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Administracion provincias</li>
+                <li><%= link_to "Municipios", municipios_path %></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Comunicacion</li>
+                <li><%= link_to "Comentarios", comentarios_path %></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Informacion usuarios</li>
+                <li><%= link_to "Tipos de documentos", tipo_docs_path %></li>
+                <li><%= link_to "Estado civil", estado_civils_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Estudiantes", estudiantes_path %></li>
+            </ul>
+        </li>
+  
+        <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true"><%= current_user.email %></a>
+            <ul class="dropdown-menu">
+                <li><%= link_to "Usuarios", users_path %></li>
+                <li><%= link_to "Roles", roles_path %></li>
+                <li><%= link_to 'Editar perfil', edit_user_registration_path %></li> 
+                <li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete  %></li>
+            </ul>
+        </li>
+        <% else %>
+              <li><%= link_to "Inicio", home_path %></li>
+              <li><%= link_to "Registrarse", new_user_registration_path %></li>
+              <li><%= link_to "Iniciar sesion", new_user_session_path %></li>
+        <% end %>
+            
+      </ul>
+    </div>
+  </div>
+</nav>

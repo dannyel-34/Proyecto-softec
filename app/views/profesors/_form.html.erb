@@ -1,0 +1,97 @@
+<%= simple_form_for(@profesor, :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
+
+  <% if @profesor.errors.any? %>
+	<div id="error_explanation">
+  	<h2><%= pluralize(@profesor.errors.count, "error") %> prohibited this municipio from being saved:</h2>
+
+  	<ul>
+  	<% @profesor.errors.full_messages.each do |message| %>
+    	<li><%= message %></li>
+  	<% end %>
+  	</ul>
+	</div>
+  <% end %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Nombre</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :nombre, class: 'form-control' %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Primer apellido</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :primer_apellido, class: 'form-control' %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Segundo apellido</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :segundo_apellido, class: 'form-control' %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Nombre completo</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :nombre_completo, class: 'form-control' %>
+   	</div>
+  </div> 
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Fecha Final</label>
+   	<div class="col-md-4">
+      	 <%= f.text_field :fch_nacimiento, 'data-provide' => "datepicker", class: "form-control", size: "40", width: "20", heigth: "62" %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Direccion</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :direccion, class: 'form-control' %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Telefono</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :telefono, class: 'form-control' %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Cedula</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :doc_identidad, class: 'form-control' %>
+   	</div>
+  </div>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Tipo de documento</label>
+   	<div class="col-md-4">
+      <%= f.collection_select :tipo_doc_id, TipoDoc.all, :id, :nombre, class: "form-control", prompt: "Seleccione documento" %>
+   	</div>
+  </div>
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Estado Civil</label>
+   	<div class="col-md-4">
+      	<%= f.collection_select :estado_civils_id, EstadoCivil.all, :id, :nombre, class: "form-control", prompt: "Seleccione Municipio" %>
+   	</div>
+  </div>
+  
+  
+
+  <div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+  	<%= f.submit "Guardar", class: "btn btn-sm btn-success" %>
+	</div>
+  </div>
+   </div>
+</div>
+
+
+<% end %>

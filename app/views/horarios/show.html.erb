@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fch ini:</strong>
+  <%= @horario.fch_ini %>
+</p>
+
+<p>
+  <strong>Fch fin:</strong>
+  <%= @horario.fch_fin %>
+</p>
+
+<p>
+  <strong>Diassemana:</strong>
+  <%= @horario.diasSemana %
+</p>
+
+<p>
+  <strong>Profesor:</strong>
+  <%= @horario.profesor.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_horario_path(@horario) %> |
+<%= link_to 'Back', horarios_path %>

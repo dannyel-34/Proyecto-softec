@@ -1,0 +1,52 @@
+<div class="grupos">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @grupo.nombre %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @grupo.cod %>
+</p>
+
+<p>
+  <strong>Fecha Inicio:</strong>
+  <%= @grupo.fch_ini %>
+</p>
+
+<p>
+  <strong>Fecha Final:</strong>
+  <%= @grupo.fch_fin %>
+</p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @grupo.lugar %>
+</p>
+
+<p>
+  <strong>Notas:</strong>
+  <%= @grupo.notas %>
+</p>
+
+<p>
+  <strong>Maximo alumnos:</strong>
+  <%= @grupo.maximo_alumnos %>
+</p>
+
+<p>
+  <strong>Numero alumnos:</strong>
+  <%= @grupo.numero_alumnos %>
+</p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @grupo.horario %>
+</p>
+
+
+<%= link_to 'Editar', edit_curso_grupo_path(@curso, @grupo) %> |
+<%= link_to 'Atras', curso_grupos_path(@curso) %>
+</div>

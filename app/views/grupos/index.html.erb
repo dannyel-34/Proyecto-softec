@@ -1,0 +1,27 @@
+<h1>Listado de Grupos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cod</th>
+      <th>Fecha Inicio</th>
+      <th>Fecha Final</th>
+      <th>Lugar</th>
+      <th>Notas</th>
+      <th>Maximo alumnos</th>
+      <th>Numero alumnos</th>
+      <th>Horario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <%=render @grupos %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo', new_curso_grupo_path(@curso), class: "btn btn-info", remote: true %> |
+<%= link_to 'Ir a cursos', cursos_path, class: "btn btn-warning" %> 

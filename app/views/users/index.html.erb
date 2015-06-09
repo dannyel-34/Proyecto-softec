@@ -1,0 +1,21 @@
+<center><h1>Listado de usuarios</h1></center>
+
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Rol</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <%= render @users %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo', new_user_path, class: "btn btn-primary", remote: true %>
+</div>
