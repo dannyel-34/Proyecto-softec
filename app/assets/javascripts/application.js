@@ -25,6 +25,8 @@ $(document).on('ready page:load', function () {
      $.rails.allowAction = $.lazybox.confirm;
 });
 
+
+
 $('.datepicker').datepicker({
     format: 'mm/dd/yyyy',
     startDate: '1900'

@@ -1,3 +1,5 @@
+<div class="panel panel-success">
+  <div class="panel-body">
 <%= simple_form_for([@curso, @grupo], :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
 
   <% if @grupo.errors.any? %>
@@ -54,12 +56,6 @@
    	</div>
   </div>
   
-  <div class="form-group">
-   	<label for="name" class="col-sm-3 control-label">Nombre</label>
-   	<div class="col-md-4">
-      	<%= f.input_field :maximo_alumnos, class: 'form-control' %>
-   	</div>
-  </div>
   
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Maximo de alumnos</label>
@@ -71,14 +67,23 @@
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Numero de alumnos</label>
    	<div class="col-md-4">
+      	<%= f.input_field :numero_alumnos, class: 'form-control' %>
+   	</div>
+  </div>
+  
+    <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Horario</label>
+   	<div class="col-md-4">
       	<%= f.input_field :horario, class: 'form-control' %>
    	</div>
   </div>
 
-  <div class="form-group">
+ <div class="form-group">
 	<div class="col-sm-offset-2 col-sm-10">
-  	<%= f.submit "Guardar", class: "btn btn-sm btn-success" %>
+  	<%= f.submit "Guardar", class: "btn btn-info" %>
 	</div>
-  </div>
+ </div>
 
 <% end %>
+</div>
+</div>

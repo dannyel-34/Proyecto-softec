@@ -16,16 +16,17 @@
 
 <p>
   <strong>Dia de la semana:</strong>
-  <%= @horario.diasSemana %>
+  <%= @horario.diasSemana%>
 </p>
 
 <p>
   <strong>Profesor:</strong>
   <%= @horario.profesor.nombre %>
 </p>
-
-<%= link_to 'Edit', edit_horario_path(@horario), class: "btn btn-warning" %> |
-<%= link_to 'Back', horarios_path,  class: "btn btn-success"  %>
+<center>
+<%= link_to 'Editar', edit_horario_path(@horario), class: "btn btn-warning" %> |
+<%= link_to 'Atras', horarios_path,  class: "btn btn-success"  %>
+</center>
 </div>
 </div>
 </div>

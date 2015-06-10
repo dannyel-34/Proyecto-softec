@@ -22,7 +22,7 @@ class GruposController < ApplicationController
     @grupo.curso_id = @curso.id
     respond_to do |format|
       if @grupo.save
-        format.html { redirect_to curso_grupos_path(@curso), notice: 'sucursal was successfully created.' }
+        format.html { redirect_to curso_grupos_path(@curso), notice: 'grupo satifatorimente creado' }
         format.json { render :show, status: :created, location: @grupo }
       else
         format.html { render :new }

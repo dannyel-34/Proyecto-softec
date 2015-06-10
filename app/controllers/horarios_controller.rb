@@ -20,7 +20,15 @@ class HorariosController < ApplicationController
 
   def create
     @horario = Horario.new(horario_params)
-    @horario.save
+    respond_to do |format|
+      if @horario.save
+        format.html { redirect_to @horario, notice: 'Comentario se ha creado correctamente.' }
+        format.json { render :show, status: :created, location: @horario }
+      else
+        format.html { render :new }
+        format.json { render json: @horario.errors, status: :unprocessable_entity }
+      end
+    end
 
   end
 
