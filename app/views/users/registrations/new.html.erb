@@ -6,19 +6,19 @@
     
     <div class="form-group">
       <%= f.label :nombre %>
-      <%= f.text_field :name, :autofocus => true, class: 'form-control', placeholder: "nombre"%>
+      <%= f.text_field :name, :autofocus => true, class: 'form-control', placeholder: "nombre", :required => true, title: "Usted debe ingresar su nombre"%>
     </div>
     <div class="form-group">
       <%= f.label :correo_electronico %>
-      <%= f.email_field :email, class: 'form-control', placeholder: "Correo electronico" %>
+      <%= f.email_field :email, class: 'form-control', placeholder: "Correo electronico", :required => true, title: "Ustd debe ingresar su correo electronico" %>
     </div>
     <div class="form-group">
       <%= f.label :contraseña %>
-      <%= f.password_field :password, class: 'form-control', placeholder: "contraseña" %>
+      <%= f.password_field :password, class: 'form-control', placeholder: "contraseña", :required => true, title: "Usted debe ingresar contraseña" %>
     </div>
     <div class="form-group">
       <%= f.label :confirmar_contraseña %>
-      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "confirmar contraseña" %>
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "confirmar contraseña", :required => true, title: "Usted debe confirmar contraña" %>
     </div>
     
     <div class="form-group">

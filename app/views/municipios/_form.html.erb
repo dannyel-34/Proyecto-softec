@@ -16,14 +16,14 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Departamento</label>
    	<div class="col-md-4">
-      	<%= f.input_field :nombre_departamento, class: 'form-control' %>
+      	<%= f.input_field :nombre_departamento, class: 'form-control', :required => true, title: "ingrese departamento" %>
    	</div>
   </div>
   
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Municipio</label>
    	<div class="col-md-4">
-      	<%= f.input_field :nombre_municipio, class: 'form-control' %>
+      	<%= f.input_field :nombre_municipio, class: 'form-control', :required => true, title: "ingrese municipio" %>
    	</div>
   </div>
 
@@ -31,7 +31,7 @@
 <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Centro poblado</label>
    	<div class="col-md-4">
-      	<%= f.input_field :nombre_centro_poblado, class: 'form-control' %>
+      	<%= f.input_field :nombre_centro_poblado, class: 'form-control', :required => true, title: "ingrese centro poblado" %>
    	</div>
   </div>
 

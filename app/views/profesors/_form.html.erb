@@ -17,28 +17,28 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Nombre</label>
    	<div class="col-md-4">
-      	<%= f.input_field :nombre, class: 'form-control' %>
+      	<%= f.input_field :nombre, class: 'form-control', :required => true, title: "Necesita un nombre" %>
    	</div>
   </div>
   
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Primer apellido</label>
    	<div class="col-md-4">
-      	<%= f.input_field :primer_apellido, class: 'form-control' %>
+      	<%= f.input_field :primer_apellido, class: 'form-control',  :required => true, title: "Primer apellido" %>
    	</div>
   </div>
   
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Segundo apellido</label>
    	<div class="col-md-4">
-      	<%= f.input_field :segundo_apellido, class: 'form-control' %>
+      	<%= f.input_field :segundo_apellido, class: 'form-control',  :required => true, title: "Segundo apellido" %>
    	</div>
   </div>
   
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Nombre completo</label>
    	<div class="col-md-4">
-      	<%= f.input_field :nombre_completo, class: 'form-control' %>
+      	<%= f.input_field :nombre_completo, class: 'form-control',  :required => true, title: "nombre completo" %>
    	</div>
   </div> 
   
@@ -52,21 +52,21 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Direccion</label>
    	<div class="col-md-4">
-      	<%= f.input_field :direccion, class: 'form-control' %>
+      	<%= f.input_field :direccion, class: 'form-control' ,  :required => true, title: "Necesita una direccion" %>
    	</div>
   </div>
   
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Telefono</label>
    	<div class="col-md-4">
-      	<%= f.input_field :telefono, class: 'form-control' %>
+      	<%= f.input_field :telefono, class: 'form-control',  :required => true, title: "Necesita un telefono" %>
    	</div>
   </div>
   
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Cedula</label>
    	<div class="col-md-4">
-      	<%= f.input_field :doc_identidad, class: 'form-control' %>
+      	<%= f.input_field :doc_identidad, class: 'form-control',  :required => true, title: "ingese documento" %>
    	</div>
   </div>
   
