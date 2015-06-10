@@ -12,20 +12,10 @@
   </thead>
 
   <tbody>
-    <% @horarios.each do |horario| %>
-      <tr>
-        <td><%= horario.fch_ini %></td>
-        <td><%= horario.fch_fin %></td>
-        <td><%= horario.diasSemana %></td>
-        <td><%= horario.profesor.nombre %></td>
-        <td><%= link_to 'Mostrar', horario, class: "btn btn-info" %></td>
-        <td><%= link_to 'Editar', edit_horario_path(horario), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Eliminar', horario, method: :delete, data: { confirm: 'Estas Seguro?' }, class: "btn btn-danger" %></td>
-      </tr>
-    <% end %>
+    <%= render @horarios %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'Nuevo', new_horario_path, class: "btn btn-info" %>
+<%= link_to 'Nuevo', new_horario_path, class: "btn btn-info", remote: true %>

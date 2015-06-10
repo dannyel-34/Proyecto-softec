@@ -5,16 +5,14 @@ class HorariosController < ApplicationController
 
   def index
     @horarios = Horario.all
-    respond_with(@horarios)
+    
   end
 
   def show
-    respond_with(@horario)
   end
 
   def new
     @horario = Horario.new
-    respond_with(@horario)
   end
 
   def edit
@@ -23,17 +21,17 @@ class HorariosController < ApplicationController
   def create
     @horario = Horario.new(horario_params)
     @horario.save
-    respond_with(@horario)
+
   end
 
   def update
     @horario.update(horario_params)
-    respond_with(@horario)
+ 
   end
 
   def destroy
     @horario.destroy
-    respond_with(@horario)
+  
   end
 
   private

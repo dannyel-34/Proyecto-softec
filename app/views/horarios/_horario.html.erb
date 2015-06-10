@@ -1,0 +1,9 @@
+<tr id=<%= "horario_#{horario.id}" %>>
+        <td><%= horario.fch_ini %></td>
+        <td><%= horario.fch_fin %></td>
+        <td><%= horario.diasSemana %></td>
+        <td><%= horario.profesor.nombre %></td>
+        <td><%= link_to 'Mostrar', horario, class: "btn btn-info", remote: true %></td>
+        <td><%= link_to 'Editar', edit_horario_path(horario), class: "btn btn-warning", remote: true %></td>
+        <td><%= link_to 'Eliminar', horario, method: :delete, data: { confirm: 'Estas Seguro?' }, class: "btn btn-danger", remote: true %></td>
+</tr>     
