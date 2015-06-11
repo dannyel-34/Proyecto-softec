@@ -15,14 +15,14 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Codigo de Ficha: </label>
    	<div class="col-md-4">
-      	<%= f.number_field :ficha, class: 'form-control' %>
+      	<%= f.number_field :ficha, class: 'form-control', :required => true, title: "Usted debe ingresar un codigo de ficha" %>
    	</div>
   </div>
   
     <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Nombre</label>
    	<div class="col-md-4">
-      	<%= f.input_field :nombre, class: 'form-control' %>
+      	<%= f.input_field :nombre, class: 'form-control', :required => true, title: "Usted debe ingresar un nombre" %>
    	</div>
   </div>
   
@@ -30,21 +30,28 @@
     <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">primer apellido: </label>
    	<div class="col-md-4">
-      	<%= f.input_field :primer_apellido, class: 'form-control' %>
+      	<%= f.input_field :primer_apellido, class: 'form-control', :required => true, title: "Usted debe ingresar primer apellido" %>
    	</div>
   </div>
   
     <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Segundo apellido: </label>
    	<div class="col-md-4">
-      	<%= f.input_field :segundo_apellido, class: 'form-control' %>
+      	<%= f.input_field :segundo_apellido, class: 'form-control', :required => true, title: "Usted debe ingresar segundo apellido" %>
    	</div>
   </div>
   
     <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Nombre completo: </label>
    	<div class="col-md-4">
-      	<%= f.input_field :nombre_completo, class: 'form-control' %>
+      	<%= f.input_field :nombre_completo, class: 'form-control', :required => true, title: "Usted debe ingresar su nombre completo" %>
+   	</div>
+  </div>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Correo electronico: </label>
+   	<div class="col-md-4">
+      	<%= f.input_field :email, class: 'form-control', :required => true, title: "Usted debe ingresar un correo electronico" %>
    	</div>
   </div>
   
@@ -60,15 +67,15 @@
     <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Telefono: </label>
    	<div class="col-md-4">
-      	<%= f.input_field :tel, class: 'form-control' %>
+      	<%= f.input_field :tel, class: 'form-control', :required => true, title: "Usted debe ingresar su telefon fijo" %>
    	</div>
   </div>
   
   
     <div class="form-group">
-   	<label for="name" class="col-sm-3 control-label">Nombre</label>
+   	<label for="name" class="col-sm-3 control-label">Direccion: </label>
    	<div class="col-md-4">
-      	<%= f.input_field :direccion, class: 'form-control' %>
+      	<%= f.input_field :direccion, class: 'form-control', :required => true, title: "Usted debe ingresar su direccion de domicilio" %>
    	</div>
   </div>
   
@@ -80,16 +87,16 @@
     </div>
   
     <div class="form-group">
-   	<label for="name" class="col-sm-3 control-label">Nombre</label>
+   	<label for="name" class="col-sm-3 control-label">Celular: </label>
    	<div class="col-md-4">
-      	<%= f.input_field :celular, class: 'form-control' %>
+      	<%= f.input_field :celular, class: 'form-control', :required => true, title: "Usted debe ingresar su celular" %>
    	</div>
   </div>
   
     <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Documento de identidad: </label>
    	<div class="col-md-4">
-      	<%= f.input_field :doc, class: 'form-control' %>
+      	<%= f.input_field :doc, class: 'form-control', :required => true, title: "Usted debe ingresar su documento de identidad" %>
    	</div>
   </div>
   
