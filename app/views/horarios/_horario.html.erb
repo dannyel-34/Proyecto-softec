@@ -1,0 +1,10 @@
+<tr id=<%= "horario_#{horario.id}" %>>
+        <td><%= mostrar_asistencia(horario.asiste) %></td>
+        <td><%= horario.fch %></td>
+        <td><%= horario.curso.nombre %></td>
+        <td><%= horario.profesor.nombre %></td>
+        <td><%= horario.alumno.nombre_completo %></td>
+        <td><%= link_to 'Mostrar', horario, class: "btn btn-info", remote: true %></td>
+        <td><%= link_to 'Editar', edit_horario_path(horario), class: "btn btn-warning", remote: true %></td>
+        <td><%= link_to 'Eliminar', horario, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", remote: true %></td>
+</tr>  

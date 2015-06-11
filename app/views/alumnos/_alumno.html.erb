@@ -1,0 +1,20 @@
+<tr id=<%= "alumno_#{alumno.id}" %>>
+        <td><%= alumno.ficha %></td>
+        <td><%= alumno.nombre %></td>
+        <td><%= alumno.primer_apellido %></td>
+        <td><%= alumno.segundo_apellido %></td>
+        <td><%= alumno.nombre_completo %></td>
+        <td><%= mostrar_genero(alumno.genero)%></td>
+        <td><%= alumno.tel %></td>
+        <td><%= alumno.direccion %></td>
+        <td><%= alumno.municipio.nombre %></td>
+        <td><%= alumno.celular %></td>
+        <td><%= alumno.doc %></td>
+        <td><%= alumno.tipo_doc.nombre %></td>
+        <td><%= alumno.fch_nacimiento %></td>
+        <td><%= calcular_edad(alumno.fch_nacimiento) %></td>
+        <td><%= alumno.estado_civil.nombre %></td>
+        <td><%= link_to 'Mostrar', alumno, class: "btn btn-info", remote: true %></td>
+        <td><%= link_to 'Editar', edit_alumno_path(alumno), class: "btn btn-warning", remote: true %></td>
+        <td><%= link_to 'Eliminar', alumno, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", remote: true %></td>
+</tr>     

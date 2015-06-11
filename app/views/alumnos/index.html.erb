@@ -1,5 +1,32 @@
 <h1>Listado de  alumnos</h1>
 
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Busqueda </h3>
+  </div>
+  <div class="panel-body">
+      
+      <br>
+    <%= form_tag alumnos_path, :method => 'get' do %>
+     <% content_tag :label do %>
+          <h5 class="bus">Buscar:</h5>
+         <%= text_field_tag :search, params[:search], id: "inp1", placeholder: "nombres", class: 'form-control lg-6' %>
+     <% end %>
+    <% end %>
+
+    <button class="btn btn-info btn-sm" name="nil", id="btn-1">
+        <%= image_tag("search.png") %>
+    </button>
+    
+    <br>
+  
+  </div>
+</div>
+
+<br>
+
+<br>
+
 <div class="table-responsive">
 <table class="table table-striped">
   <thead>
@@ -24,32 +51,17 @@
   </thead>
 
   <tbody>
-    <% @alumnos.each do |alumno| %>
-      <tr>
-        <td><%= alumno.ficha %></td>
-        <td><%= alumno.nombre %></td>
-        <td><%= alumno.primer_apellido %></td>
-        <td><%= alumno.segundo_apellido %></td>
-        <td><%= alumno.nombre_completo %></td>
-        <td><%= mostrar_genero(alumno.genero)%></td>
-        <td><%= alumno.tel %></td>
-        <td><%= alumno.direccion %></td>
-        <td><%= alumno.municipio.nombre %></td>
-        <td><%= alumno.celular %></td>
-        <td><%= alumno.doc %></td>
-        <td><%= alumno.tipo_doc.nombre %></td>
-        <td><%= alumno.fch_nacimiento %></td>
-        <td><%= calcular_edad(alumno.fch_nacimiento) %></td>
-        <td><%= alumno.estado_civil.nombre %></td>
-        <td><%= link_to 'Mostrar', alumno, class: "btn btn-info" %></td>
-        <td><%= link_to 'Editar', edit_alumno_path(alumno), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Eliminar', alumno, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-      </tr>
-    <% end %>
+   <%= render @alumnos %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'Nuevo', new_alumno_path, class: "btn btn-default" %>
+<%= link_to 'Nuevo', new_alumno_path, class: "btn btn-default", remote: true %>
+
+<br>
+Alumnos: <%= @alumnos.count %>
+
+<br>
+<%= will_paginate @alumnos, renderer: BootstrapPagination::Rails, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;', class: 'pagination pagination-sm', id: 'pag-1' %>
 </div>

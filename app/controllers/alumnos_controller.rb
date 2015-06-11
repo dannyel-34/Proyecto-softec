@@ -4,17 +4,14 @@ class AlumnosController < ApplicationController
   respond_to :html
 
   def index
-    @alumnos = Alumno.all
-    respond_with(@alumnos)
+    @alumnos = Alumno.search(params[:search], params[:page])
   end
 
   def show
-    respond_with(@alumno)
   end
 
   def new
     @alumno = Alumno.new
-    respond_with(@alumno)
   end
 
   def edit
@@ -23,17 +20,14 @@ class AlumnosController < ApplicationController
   def create
     @alumno = Alumno.new(alumno_params)
     @alumno.save
-    respond_with(@alumno)
   end
 
   def update
     @alumno.update(alumno_params)
-    respond_with(@alumno)
   end
 
   def destroy
     @alumno.destroy
-    respond_with(@alumno)
   end
 
   private

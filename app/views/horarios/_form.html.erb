@@ -1,38 +1,63 @@
-<%= form_for(@horario) do |f| %>
-  <% if @horario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@horario.errors.count, "error") %> prohibited this horario from being saved:</h2>
+<div class="panel panel-success">
+  <div class="panel-body">
+<%= simple_form_for(@horario, :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
 
-      <ul>
-      <% @horario.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <% if @horario.errors.any? %>
+	<div id="error_explanation">
+  	<h2><%= pluralize(@horario.errors.count, "error") %> prohibited this municipio from being saved:</h2>
+
+  	<ul>
+  	<% @horario.errors.full_messages.each do |message| %>
+    	<li><%= message %></li>
+  	<% end %>
+  	</ul>
+	</div>
   <% end %>
 
-  <div class="field">
-    Asistencia: <br>
-    <%= f.radio_button(:asiste, true) %> Asiste<br>
-    <%= f.radio_button(:asiste, false) %> Falto<br>
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Asiste</label>
+   	<div class="col-md-4">
+      <%= f.radio_button(:asiste, true) %> Asiste<br>
+      <%= f.radio_button(:asiste, false) %> Falto<br>
+   	</div>
   </div>
-  <div class="field">
-    <%= f.label :fch %><br>
-    <%= f.datetime_select :fch %>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Fecha</label>
+   	<div class="col-md-4">
+      <%= f.datetime_select :fch, class: 'form-control' %>
+   	</div>
   </div>
-  <div class="field">
-    Curso: <br>
-    <%= f.collection_select :curso_id, Curso.all, :id, :nombre, class: "form-control", prompt: "Seleccione Municipio" %>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Curso</label>
+   	<div class="col-md-4">
+      <%= f.collection_select :curso_id, Curso.all, :id, :nombre, class: "form-control", prompt: "Seleccione Municipio" %>
+   	</div>
   </div>
-  <div class="field">
-    Profesor: <br>
-    <%= f.collection_select :profesor_id, Profesor.all, :id, :nombre, class: "form-control", prompt: "Seleccione Municipio" %>
+  
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Profesor</label>
+   	<div class="col-md-4">
+      <%= f.collection_select :profesor_id, Profesor.all, :id, :nombre, class: "form-control", prompt: "Seleccione Municipio" %>
+   	</div>
   </div>
-  <div class="field">
-    Alumno:  <br>
-    <%= f.collection_select :alumno_id, Alumno.all, :id, :nombre_completo, class: "form-control", prompt: "Seleccione Municipio" %>
+  
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Alumno</label>
+   	<div class="col-md-4">
+      <%= f.collection_select :alumno_id, Alumno.all, :id, :nombre_completo, class: "form-control", prompt: "Seleccione Municipio" %>
+   	</div>
   </div>
-  <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn-success" %>
+  
+  
+
+  <div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+  	<%= f.submit "Guardar", class: "btn btn-sm btn-success" %>
+	</div>
   </div>
+
 <% end %>
+</div>
+</div>
