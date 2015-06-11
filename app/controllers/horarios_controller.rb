@@ -5,14 +5,16 @@ class HorariosController < ApplicationController
 
   def index
     @horarios = Horario.all
-    
+    respond_with(@horarios)
   end
 
   def show
+    respond_with(@horario)
   end
 
   def new
     @horario = Horario.new
+    respond_with(@horario)
   end
 
   def edit
@@ -20,26 +22,18 @@ class HorariosController < ApplicationController
 
   def create
     @horario = Horario.new(horario_params)
-    respond_to do |format|
-      if @horario.save
-        format.html { redirect_to @horario, notice: 'Comentario se ha creado correctamente.' }
-        format.json { render :show, status: :created, location: @horario }
-      else
-        format.html { render :new }
-        format.json { render json: @horario.errors, status: :unprocessable_entity }
-      end
-    end
-
+    @horario.save
+    respond_with(@horario)
   end
 
   def update
     @horario.update(horario_params)
- 
+    respond_with(@horario)
   end
 
   def destroy
     @horario.destroy
-  
+    respond_with(@horario)
   end
 
   private
@@ -48,6 +42,6 @@ class HorariosController < ApplicationController
     end
 
     def horario_params
-      params.require(:horario).permit(:fch_ini, :fch_fin, :diasSemana, :profesor_id)
+      params.require(:horario).permit(:asiste, :fch, :curso_id, :profesor_id, :alumno_id)
     end
 end

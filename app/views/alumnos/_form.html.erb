@@ -1,0 +1,73 @@
+<%= form_for(@alumno) do |f| %>
+  <% if @alumno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alumno.errors.count, "error") %> prohibited this alumno from being saved:</h2>
+
+      <ul>
+      <% @alumno.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ficha %><br>
+    <%= f.number_field :ficha %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :primer_apellido %><br>
+    <%= f.text_field :primer_apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :segundo_apellido %><br>
+    <%= f.text_field :segundo_apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre_completo %><br>
+    <%= f.text_field :nombre_completo %>
+  </div>
+  <div class="field"> 
+  Masculino: <%= f.radio_button(:genero, true) %> 
+  Femenino: <%= f.radio_button(:genero, false) %>
+ </div>
+  <div class="field">
+    <%= f.label :tel %><br>
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    Municipio Ubicación <br>
+    <%= f.collection_select :municipio_id, Municipio.all, :id, :nombre, class: "form-control", prompt: "Seleccione Municipio" %>
+  </div>
+  <div class="field">
+    <%= f.label :celular %><br>
+    <%= f.text_field :celular %>
+  </div>
+  <div class="field">
+    <%= f.label :doc %><br>
+    <%= f.text_field :doc %>
+  </div>
+  <div class="field">
+    Tipo de documento: <br>
+    <%= f.collection_select :tipo_doc_id, TipoDoc.all, :id, :nombre, class: "form-control", prompt: "Seleccione Documento" %>
+  </div>
+  <div class="field">
+    <%= f.label :fch_nacimiento %><br>
+    <%= f.date_select :fch_nacimiento %>
+  </div>
+  <div class="field">
+    Estado civil: <br>
+    <%= f.collection_select :estado_civil_id, EstadoCivil.all, :id, :nombre, class: "form-control", prompt: "Seleccione Esatdo" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.extract! @alumno, :id, :ficha, :nombre, :primer_apellido, :segundo_apellido, :nombre_completo, :tel, :direccion, :municipio_id, :celular, :doc, :tipo_doc_id, :fch_nacimiento, :estado_civil_id, :created_at, :updated_at

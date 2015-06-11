@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ficha:</strong>
+  <%= @alumno.ficha %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @alumno.nombre %>
+</p>
+
+<p>
+  <strong>Primer apellido:</strong>
+  <%= @alumno.primer_apellido %>
+</p>
+
+<p>
+  <strong>Segundo apellido:</strong>
+  <%= @alumno.segundo_apellido %>
+</p>
+
+<p>
+  <strong>Nombre completo:</strong>
+  <%= @alumno.nombre_completo %>
+</p>
+
+<p>
+  <strong>Genero: </strong>
+  <%= mostrar_genero(@alumno.genero)%>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @alumno.tel %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @alumno.direccion %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @alumno.municipio.nombre %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @alumno.celular %>
+</p>
+
+<p>
+  <strong>Doc:</strong>
+  <%= @alumno.doc %>
+</p>
+
+<p>
+  <strong>Tipo doc:</strong>
+  <%= @alumno.tipo_doc.nombre %>
+</p>
+
+<p>
+  <strong>Fch nacimiento:</strong>
+  <%= @alumno.fch_nacimiento %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= calcular_edad(@alumno.fch_nacimiento) %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <%= @alumno.estado_civil.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_alumno_path(@alumno) %> |
+<%= link_to 'Back', alumnos_path %>

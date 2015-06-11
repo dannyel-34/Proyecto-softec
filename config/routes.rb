@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   
   resources :horarios
 
+  resources :alumnos
+
   resources :cursos do
       resources :grupos
   end
@@ -17,8 +19,6 @@ Rails.application.routes.draw do
   end
 
   resources :roles
-
-  resources :estudiantes
 
   devise_for :users
   resources :users

@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609020655) do
+ActiveRecord::Schema.define(version: 20150610233441) do
+
+  create_table "alumnos", force: true do |t|
+    t.integer  "ficha"
+    t.string   "nombre"
+    t.string   "primer_apellido"
+    t.string   "segundo_apellido"
+    t.string   "nombre_completo"
+    t.string   "tel"
+    t.string   "direccion"
+    t.integer  "municipio_id"
+    t.string   "celular"
+    t.string   "doc"
+    t.integer  "tipo_doc_id"
+    t.date     "fch_nacimiento"
+    t.integer  "estado_civil_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "genero"
+  end
+
+  add_index "alumnos", ["estado_civil_id"], name: "index_alumnos_on_estado_civil_id"
+  add_index "alumnos", ["municipio_id"], name: "index_alumnos_on_municipio_id"
+  add_index "alumnos", ["tipo_doc_id"], name: "index_alumnos_on_tipo_doc_id"
 
   create_table "assignments", force: true do |t|
     t.integer  "user_id"
@@ -47,26 +70,6 @@ ActiveRecord::Schema.define(version: 20150609020655) do
     t.datetime "updated_at"
   end
 
-  create_table "estudiantes", force: true do |t|
-    t.string   "pr_nombre"
-    t.string   "sr_nombre"
-    t.string   "pr_apellido"
-    t.string   "sr_apellido"
-    t.string   "mail"
-    t.integer  "tipo_doc_id"
-    t.integer  "num_doc"
-    t.integer  "municipio_id"
-    t.boolean  "genero"
-    t.date     "fch_nacimiento"
-    t.string   "direccion"
-    t.string   "telefono"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "estudiantes", ["municipio_id"], name: "index_estudiantes_on_municipio_id"
-  add_index "estudiantes", ["tipo_doc_id"], name: "index_estudiantes_on_tipo_doc_id"
-
   create_table "grupos", force: true do |t|
     t.string   "nombre"
     t.string   "cod"
@@ -85,14 +88,17 @@ ActiveRecord::Schema.define(version: 20150609020655) do
   add_index "grupos", ["curso_id"], name: "index_grupos_on_curso_id"
 
   create_table "horarios", force: true do |t|
-    t.date     "fch_ini"
-    t.date     "fch_fin"
-    t.boolean  "diasSemana"
+    t.boolean  "asiste"
+    t.datetime "fch"
+    t.integer  "curso_id"
     t.integer  "profesor_id"
+    t.integer  "alumno_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "horarios", ["alumno_id"], name: "index_horarios_on_alumno_id"
+  add_index "horarios", ["curso_id"], name: "index_horarios_on_curso_id"
   add_index "horarios", ["profesor_id"], name: "index_horarios_on_profesor_id"
 
   create_table "institucions", force: true do |t|

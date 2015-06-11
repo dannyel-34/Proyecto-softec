@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asiste:</strong>
+  <%= mostrar_asistencia(@horario.asiste) %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @horario.fch %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @horario.curso.nombre %>
+</p>
+
+<p>
+  <strong>Profesor:</strong>
+  <%= @horario.profesor.nombre %>
+</p>
+
+<p>
+  <strong>Alumno:</strong>
+  <%= @horario.alumno.nombre_completo %>
+</p>
+
+<%= link_to 'Edit', edit_horario_path(@horario) %> |
+<%= link_to 'Back', horarios_path %>

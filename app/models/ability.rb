@@ -5,8 +5,6 @@ class Ability
     if user.has_role? :coordinador
       can :manage, :all
       authorize! :manage, :all  #Aqui le damos autorización al admin de tener acceso a todo.
-    elsif user.has_role? :comun
-      can :read, all
     elsif user.has_role? :docente
       can :read, User
       can :read, Role
@@ -19,6 +17,8 @@ class Ability
       can :read, Sucursal
       can :read, Profesor
       can :edit, Profesor
+    elsif user.has_role? :comun
+      can :read, all
     else
       can :read, :all
     end

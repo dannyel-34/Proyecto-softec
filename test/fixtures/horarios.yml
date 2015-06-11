@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  fch_ini: 2015-06-09
-  fch_fin: 2015-06-09
-  diasSemana: false
+  asiste: false
+  fch: 2015-06-10 23:15:30
+  curso_id: 
   profesor_id: 
+  alumno_id: 
 
 two:
-  fch_ini: 2015-06-09
-  fch_fin: 2015-06-09
-  diasSemana: false
+  asiste: false
+  fch: 2015-06-10 23:15:30
+  curso_id: 
   profesor_id: 
+  alumno_id: 
