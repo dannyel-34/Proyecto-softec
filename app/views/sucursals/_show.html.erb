@@ -1,0 +1,33 @@
+
+<div class='sucursales'>
+<div class="panel panel-success">
+<div class="panel-body">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cod:</strong>
+  <%= @sucursal.cod %>
+</p>
+
+<p>
+  <strong>Sede:</strong>
+  <%= @sucursal.sede %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @sucursal.direccion %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @sucursal.email %>
+</p>
+
+
+
+<%= link_to 'Editar', edit_institucion_sucursal_path(@institucion, @sucursal), class: "btn btn-warning" %> |
+<%= link_to 'Atras', institucion_sucursals_path(@institucion), class: "btn btn-success"  %>
+</div>
+</div>
+</div>

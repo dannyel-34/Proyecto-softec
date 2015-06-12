@@ -17,14 +17,14 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Nombre</label>
    	<div class="col-md-4">
-      	<%= f.input_field :nombre, class: 'form-control' %>
+      	<%= f.input_field :nombre, class: 'form-control', :required => true, title: "Usted debe ingresar grupo" %>
    	</div>
   </div>
   
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Codigo</label>
    	<div class="col-md-4">
-      	<%= f.input_field :cod, class: 'form-control' %>
+      	<%= f.input_field :cod, class: 'form-control', :required => true, title: "Usted debe ingresar codigo" %>
    	</div>
   </div>
   
@@ -45,14 +45,14 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Lugar</label>
    	<div class="col-md-4">
-      	<%= f.input_field :lugar, class: 'form-control' %>
+      	<%= f.input_field :lugar, class: 'form-control', :required => true, title: "Usted debe ingresar lugar " %>
    	</div>
   </div>
   
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Notas</label>
    	<div class="col-md-4">
-      	<%= f.input_field :notas, class: 'form-control' %>
+      	<%= f.input_field :notas, class: 'form-control', :required => true, title: "Usted debe ingresar notas" %>
    	</div>
   </div>
   
@@ -60,21 +60,21 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Maximo de alumnos</label>
    	<div class="col-md-4">
-      	<%= f.input_field :numero_alumnos, class: 'form-control' %>
+      	<%= f.input_field :maximo_alumnos, class: 'form-control', :required => true, title: "Usted debe ingresar numero limite de alumnos" %>
    	</div>
   </div>
   
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Numero de alumnos</label>
    	<div class="col-md-4">
-      	<%= f.input_field :numero_alumnos, class: 'form-control' %>
+      	<%= f.input_field :numero_alumnos, class: 'form-control', :required => true, title: "Usted debe ingresar numero de alumnos" %>
    	</div>
   </div>
   
     <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Horario</label>
    	<div class="col-md-4">
-      	<%= f.input_field :horario, class: 'form-control' %>
+      	<%= f.input_field :horario, class: 'form-control', :required => true, title: "Usted debe ingresar horario de clase" %>
    	</div>
   </div>
 

@@ -1,35 +1,52 @@
-<%= form_for([@institucion, @sucursal]) do |f| %>
-  
-   <% if @sucursal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sucursal.errors.count, "error") %> prohibited this sucursal from being saved:</h2>
 
-      <ul>
-      <% @sucursal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+
+
+<%= simple_form_for([@institucion, @sucursal], :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
+
+  <% if @sucursal.errors.any? %>
+	<div id="error_explanation">
+  	<h2><%= pluralize(@sucursal.errors.count, "error") %> prohibited this municipio from being saved:</h2>
+
+  	<ul>
+  	<% @sucursal.errors.full_messages.each do |message| %>
+    	<li><%= message %></li>
+  	<% end %>
+  	</ul>
+	</div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :cod %><br>
-    <%= f.text_field :cod %>
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">NIT</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :cod, class: 'form-control' %>
+   	</div>
   </div>
-  <div class="field">
-    <%= f.label :sede %><br>
-    <%= f.text_field :sede %>
+  
+    <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Sede</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :sede, class: 'form-control' %>
+   	</div>
   </div>
-  <div class="field">
-    <%= f.label :direccion %><br>
-    <%= f.text_field :direccion %>
+  
+    <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Direccion</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :direccion, class: 'form-control' %>
+   	</div>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  
+    <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Correo electronico</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :email, class: 'form-control' %>
+   	</div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 
+  <div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+  	<%= f.submit "Guardar", class: "btn btn-sm btn-success" %>
+	</div>
+  </div>
+
+<% end %>
