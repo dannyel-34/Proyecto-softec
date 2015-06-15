@@ -15,7 +15,7 @@
         <td><%= alumno.fch_nacimiento %></td>
         <td><%= calcular_edad(alumno.fch_nacimiento) %></td>
         <td><%= alumno.estado_civil.nombre %></td>
-        <td><%= link_to 'Mostrar', alumno, class: "btn btn-info", remote: true %></td>
-        <td><%= link_to 'Editar', edit_alumno_path(alumno), class: "btn btn-warning", remote: true %></td>
-        <td><%= link_to 'Eliminar', alumno, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", remote: true %></td>
+        <td><%= link_to 'Mostrar', alumno, class: "btn btn-info btn-sm", remote: true %></td>
+        <td><%= link_to 'Editar', edit_alumno_path(alumno), class: "btn btn-warning btn-sm", remote: true %></td>
+        <td><%= link_to 'Eliminar', alumno, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm", remote: true %></td>
 </tr>     

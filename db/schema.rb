@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611031331) do
+ActiveRecord::Schema.define(version: 20150614210043) do
 
   create_table "alumnos", force: true do |t|
     t.integer  "ficha"
@@ -46,6 +46,23 @@ ActiveRecord::Schema.define(version: 20150611031331) do
 
   add_index "assignments", ["role_id"], name: "index_assignments_on_role_id"
   add_index "assignments", ["user_id"], name: "index_assignments_on_user_id"
+
+  create_table "assistances", force: true do |t|
+    t.integer  "alumno_id"
+    t.integer  "profesor_id"
+    t.integer  "curso_id"
+    t.integer  "grupo_id"
+    t.integer  "horario_id"
+    t.date     "fch"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assistances", ["alumno_id"], name: "index_assistances_on_alumno_id"
+  add_index "assistances", ["curso_id"], name: "index_assistances_on_curso_id"
+  add_index "assistances", ["grupo_id"], name: "index_assistances_on_grupo_id"
+  add_index "assistances", ["horario_id"], name: "index_assistances_on_horario_id"
+  add_index "assistances", ["profesor_id"], name: "index_assistances_on_profesor_id"
 
   create_table "comentarios", force: true do |t|
     t.string   "nombre"

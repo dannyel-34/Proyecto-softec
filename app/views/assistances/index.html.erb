@@ -1,0 +1,30 @@
+<h1>Listado de asistencias</h1>
+
+<%= form_tag edit_multiple_assistances_path do %>
+<div class="table-responsive">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Alumno</th>
+      <th>Profesor</th>
+      <th>Curso</th>
+      <th>Grupo</th>
+      <th>Horario</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <%= render @assistances %>
+  </tbody>
+</table>
+<%= submit_tag "Editar Asistencia", class: "btn btn-success btn-sm" %>
+
+<% end %>
+
+<br><br>
+
+<%= link_to 'Nueva', new_assistance_path, class: "btn btn-info btn-sm", remote:  true %>
+</div>

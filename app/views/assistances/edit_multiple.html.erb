@@ -1,0 +1,20 @@
+<h1>Editar</h1>
+<%= form_for (:poll), :url => update_multiple_assistances_path, :html => { :method => :put } do |f| %>
+  <ul> 
+<% for assistance in @assistances %>
+  <li>
+     <%= hidden_field_tag "assistance_ids[]", assistance.id %>
+     <%= assistance.alumno.nombre_completo %>
+  </li> 
+<% end %>
+  </ul>
+ <div class="field"> 
+    <%= f.label :asiste %><br> 
+    <%= f.number_field :asiste %>
+  </div>
+
+  <div class="actions"> 
+        <%= f.submit "Guardar", class: "btn btn-success btn-sm" %>
+  </div>
+
+<% end %>

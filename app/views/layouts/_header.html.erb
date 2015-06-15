@@ -23,6 +23,7 @@
                <span class="glyphicon glyphicon-pencil"></span> Registros<span class="caret"></span>
               </a>
             <ul class="dropdown-menu">
+                <li><%= link_to "Registro asistencias", assistances_path %></li>
                 <li><%= link_to "Registro de curso", cursos_path %></li>
                 <li><%= link_to "Registro de Horarios", horarios_path %></li>
                 
@@ -40,18 +41,7 @@
                 <li><a href="/static_pages/reportes_jornadas"> Jornadas</a></li>
             </ul>
         </li>
-        
-        <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
-                <span class="glyphicon glyphicon-cog"></span> Configuracion<span class="caret"></span>
-              </a>
-            <ul class="dropdown-menu">
-                <li><a href="/static_pages/configuracion_user">Configurar usuarios</a></li>
-                <li><a href="/static_pages/configuracion_preferencias"> Configurar preferencias</a></li>
-                <li><a href="/static_pages/agregar_info"> Agregar informacion</a></li>
-                <li><a href="/static_pages/configurar_grupos"> Configurar grados</a></li>
-            </ul>
-        </li>
+      
         
           <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">

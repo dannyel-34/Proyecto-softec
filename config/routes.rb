@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   
 
-  
-  
+
+  resources :assistances do 
+    post :edit_multiple, :on => :collection 
+    put :update_multiple, :on => :collection
+  end
+
   resources :horarios
 
   resources :alumnos
