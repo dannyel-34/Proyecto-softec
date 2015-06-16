@@ -1,5 +1,33 @@
 <center><h1>Listado de usuarios</h1></center>
 
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Busqueda </h3>
+  </div>
+  <div class="panel-body">
+      
+      <br>
+
+<%= form_tag users_path, :method => 'get' do %>
+     <% content_tag :label do %>
+           <h5 class="bus">Buscar:</h5>
+         <%= text_field_tag :search, params[:search], id: "inp2", placeholder: "nombres", class: 'form-control lg-6' %>
+         <button class="btn btn-info btn-sm" name="nil", id="btn-1">
+           <%= image_tag("search.png") %>
+         
+         </button>
+         
+     <% end %>
+<% end %>
+  </div>
+</div>
+
+<br>
+
+<br>
+
+<br>
+
 <div class="table-responsive">
 <table class="table table-striped">
   <thead>
@@ -19,4 +47,10 @@
 <br>
 
 <%= link_to 'Nuevo', new_user_path, class: "btn btn-primary", remote: true %>
+
+<br>
+<%= will_paginate @users,  renderer: BootstrapPagination::Rails, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' , class: 'pagination pagination-sm', id: 'pag-1'%>
+<br>
+Usuarios: <%= @users.count %>
+
 </div>

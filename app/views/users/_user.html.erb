@@ -1,12 +1,27 @@
 <tr id=<%= "user_#{user.id}" %>>
    <td><div class="round-image1-50"><%= image_tag(current_user.avatar.url(:thumb)) %></td></div>
-   <td><%= user.email%></td>
+   <td><%= user.name %></td>
    <% @assignments = Assignment.where(user_id: user.id).all %>
    <% @assignments.each do |a| %>
    <td><%= a.role.name %></td>
    <% end %>
-   <td><%= link_to 'Mostrar', user, remote: true, class: "btn btn-info" if can? :read, User  %></td>
-   <td><%= link_to 'Editar', edit_user_path(user), remote: true, class: "btn btn-warning"  %></td>
-   <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Esta Seguro?' }, remote: true, class: "btn btn-danger" %></td>
-
+   <% if can? :manage, :all, User %>
+   <td><%= link_to user, remote: true, class: "btn btn-info" if can? :read, User do %>
+      <span class="glyphicon glyphicon-eye-open"></span>
+   <% end  %>
+   </td>
+   <td><%= link_to edit_user_path(user), remote: true, class: "btn btn-warning"  do %>
+         <span class="glyphicon glyphicon-edit"></span>
+   <% end  %>
+   </td>
+   <td><%= link_to user, method: :delete, data: { confirm: 'Esta Seguro?' }, remote: true, class: "btn btn-danger" do %>
+         <span class="glyphicon glyphicon-edit"></span>
+   <% end  %>
+   </td>
+   <% elsif can? :read, user %>
+      <td><%= link_to user, remote: true, class: "btn btn-info" do %>
+         <span class="glyphicon glyphicon-eye-open"></span>
+      <% end  %>
+      </td>
+   <% end %>
 </tr>  

@@ -21,5 +21,11 @@ class User < ActiveRecord::Base
   def has_role?(role_sym)
     roles.any?{|r| r.name.underscore.to_sym==role_sym}
   end
+  
+  def self.search(search, page)
+      where(['upper(name) like ?',
+      "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("name")
+  end
+
 
 end
