@@ -3,7 +3,7 @@ class Alumno < ActiveRecord::Base
   belongs_to :tipo_doc
   belongs_to :estado_civil
   
-  
+
   # Validar que los atributos sean obligatorios 
   validates :nombre, :presence => true 
   validates :primer_apellido, :presence => true 
@@ -51,5 +51,7 @@ class Alumno < ActiveRecord::Base
     where(['upper(nombre) like ?',
     "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("nombre") 
   end
+  
+  
  
 end

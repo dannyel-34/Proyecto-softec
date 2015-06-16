@@ -1,5 +1,6 @@
 <tr id=<%= "user_#{user.id}" %>>
-   <td><%= user.name%></td>
+   <td><div class="round-image1-50"><%= image_tag(current_user.avatar.url(:thumb)) %></td></div>
+   <td><%= user.email%></td>
    <% @assignments = Assignment.where(user_id: user.id).all %>
    <% @assignments.each do |a| %>
    <td><%= a.role.name %></td>

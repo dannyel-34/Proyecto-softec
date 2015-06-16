@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614210043) do
+ActiveRecord::Schema.define(version: 20150615040928) do
 
   create_table "alumnos", force: true do |t|
     t.integer  "ficha"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150614210043) do
     t.datetime "updated_at"
     t.boolean  "genero"
     t.string   "email"
+    t.string   "image"
   end
 
   add_index "alumnos", ["estado_civil_id"], name: "index_alumnos_on_estado_civil_id"

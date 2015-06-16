@@ -6,7 +6,7 @@
         <td><%= assistance.grupo.nombre %></td>
         <td><%= assistance.horario.asiste %></td>
         <td><%= assistance.fch %></td>
-        <td><%= link_to 'Mostrar', assistance, class: "btn btn-info btn-sm", remote: true %></td>
-        <td><%= link_to 'Editar', edit_assistance_path(assistance), class: "btn btn-warning btn-sm", remote: true %></td>
-        <td><%= link_to 'Eliminar', assistance, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm", remote: true %></td>
+        <td><%= link_to 'Mostrar', assistance, class: "btn btn-info btn-sm", remote: true if can? :read, Assistance  %></td>
+        <td><%= link_to 'Editar', edit_assistance_path(assistance), class: "btn btn-warning btn-sm", remote: true  %></td>
+        <td><%= link_to 'Eliminar', assistance, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm", remote: true if can? :read, Assistance %></td>
 </tr>

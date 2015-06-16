@@ -61,3 +61,6 @@ gem 'cancancan'
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
 gem 'bootstrap-datepicker-rails'
+
+gem 'carrierwave' 
+gem 'dotenv-rails'
