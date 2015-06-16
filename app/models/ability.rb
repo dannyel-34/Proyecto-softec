@@ -22,7 +22,15 @@ class Ability
       can :read, Institucion
       can :edit, Institucion
       can :edit, Sucursal
-      can read, Sucursal
+      can :read, Sucursal
+      can :read, Alumno
+      can :edit, Alumno
+      can :read, EstadoCivil
+      can :edit, EstadoCivil
+      can :read, TipoDoc
+      can :edit, TipoDoc
+      can :edit, Municipio
+      can :read, Municipio
     elsif user.has_role? :comun
       can :read, all
     else

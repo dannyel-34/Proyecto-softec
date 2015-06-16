@@ -1,8 +1,6 @@
 class AlumnosController < ApplicationController
   before_action :set_alumno, only: [:show, :edit, :update, :destroy]
-  
   autocomplete :municipio, :nombre, :full => true
-  
   respond_to :html
 
   def index

@@ -3,8 +3,31 @@
         <td><%= curso.descripcion %></td>
         <td><%= curso.fch_ini %></td>
         <td><%= curso.fch_fin %></td>
-        <td><%= link_to 'Mostrar', curso, class: "btn btn-info", remote: true if can? :read, Curso %></td>
-        <td><%= link_to 'Editar', edit_curso_path(curso), class: "btn btn-warning", remote: true   %></td>
-        <td><%= link_to 'Eliminar', curso, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger",  remote: true if can? :update, Curso %></td>
-        <td><%= link_to "Grupos", curso_grupos_path(curso.id), class: "btn btn-success" %></td>
+        <% if can? :manage, :all, Curso %>
+        <td><%= link_to curso, class: "btn btn-info", remote: true do %>
+                <span class="glyphicon glyphicon-open"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_curso_path(curso), class: "btn btn-warning", remote: true do %>
+                <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        </td>
+        <td><%= link_to curso, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger",  remote: true do %>
+                <span class="glyphicon glyphicon-remove-circle"></span>
+        <% end %>
+        </td>
+        <td><%= link_to curso_grupos_path(curso.id), class: "btn btn-success" do %>
+                <span class="glyphicon glyphicon-share"></span>
+        <% end %>
+        </td>
+        <% elsif can? :read, Curso %>
+        <td><%= link_to curso, class: "btn btn-info", remote: true  do %>
+                <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_curso_path(curso), class: "btn btn-warning", remote: true  do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        </td>
+        <% end %>
 </tr>     

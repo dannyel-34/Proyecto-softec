@@ -7,6 +7,9 @@
     <td><%= link_to 'Editar', edit_comentario_path(comentario), class: "btn btn-warning", remote: true  %></td>
     <td><%= link_to 'Eliminar', comentario, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", remote: true  %></td>
     <% elsif can? :read, Comentario %>
-    <td><%= link_to 'Mostrar', comentario, remote: true, class: "btn btn-info" %></td>
+    <td><%= link_to comentario, remote: true, class: "btn btn-info"  do %>
+        <span class="glyphicon glyphicon-eye-open"></span>
+    <% end %>
+    </td>
     <% end %>
 </tr>     

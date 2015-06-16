@@ -15,7 +15,27 @@
         <td><%= alumno.fch_nacimiento %></td>
         <td><%= calcular_edad(alumno.fch_nacimiento) %></td>
         <td><%= alumno.estado_civil.nombre %></td>
-        <td><%= link_to 'Mostrar', alumno, class: "btn btn-info btn-sm", remote: true %></td>
-        <td><%= link_to 'Editar', edit_alumno_path(alumno), class: "btn btn-warning btn-sm", remote: true %></td>
-        <td><%= link_to 'Eliminar', alumno, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm", remote: true %></td>
+        <% if can? :manage, :all, Alumno %>
+        <td><%= link_to alumno, class: "btn btn-info btn-sm", remote: true do %>
+                <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_alumno_path(alumno), class: "btn btn-warning btn-sm", remote: true do %>
+                <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        </td>
+        <td><%= link_to alumno, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm", remote: true do %>
+                <span class="glyphicon glyphicon-remote-circle"></span>
+        <% end %>
+        </td>
+        <% elsif can? :read, Alumno %>
+        <td><%= link_to alumno, class: "btn btn-info btn-sm", remote: true do %>
+                <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_alumno_path(alumno), class: "btn btn-warning btn-sm", remote: true do %>
+                <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        </td>
+        <% end %>
 </tr>     
