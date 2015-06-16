@@ -10,7 +10,7 @@ class CreateProfesors < ActiveRecord::Migration
       t.integer :doc_identidad
       t.references :tipo_doc, index: true
       t.references :estado_civils, index: true
-
+      
       t.timestamps
     end
   end

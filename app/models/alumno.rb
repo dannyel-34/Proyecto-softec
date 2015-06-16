@@ -52,6 +52,13 @@ class Alumno < ActiveRecord::Base
     "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("nombre") 
   end
   
+  def municipio_nombre
+      municipio.nombre if municipio
+  end
+
+  def municipio_nombre=(nombre)
+      self.municipio = Municipio.find_by_nombre(nombre)
+  end 
   
  
 end

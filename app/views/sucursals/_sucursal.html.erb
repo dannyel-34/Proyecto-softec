@@ -3,7 +3,12 @@
         <td><%= sucursal.sede %></td>
         <td><%= sucursal.direccion %></td>
         <td><%= sucursal.email %></td>
-        <td><%= link_to 'Mostrar', institucion_sucursal_path(@institucion, sucursal), class: "btn btn-info",  remote: true %></td>
-        <td><%= link_to 'Editar', edit_institucion_sucursal_path(@institucion, sucursal), class: "btn btn-warning",  remote: true  %></td>
-        <td><%= link_to 'Eliminar', institucion_sucursal_path(@institucion, sucursal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger",  remote: true  %></td>
+        <% if can? :manage, :all, Sucursal %>
+           <td><%= link_to 'Mostrar', institucion_sucursal_path(@institucion, sucursal), class: "btn btn-info",  remote: true %></td>
+           <td><%= link_to 'Editar', edit_institucion_sucursal_path(@institucion, sucursal), class: "btn btn-warning",  remote: true  %></td>
+           <td><%= link_to 'Eliminar', institucion_sucursal_path(@institucion, sucursal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger",  remote: true  %></td>
+        <% elsif can? :read, Sucursal %>
+           <td><%= link_to 'Mostrar', institucion_sucursal_path(@institucion, sucursal), class: "btn btn-info",  remote: true %></td>
+           <td><%= link_to 'Editar', edit_institucion_sucursal_path(@institucion, sucursal), class: "btn btn-warning",  remote: true  %></td>
+    <% end %>
 </tr>    

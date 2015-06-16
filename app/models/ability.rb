@@ -19,6 +19,10 @@ class Ability
       can :edit, Profesor
       can :edit, Assistance
       can :read, Assistance
+      can :read, Institucion
+      can :edit, Institucion
+      can :edit, Sucursal
+      can read, Sucursal
     elsif user.has_role? :comun
       can :read, all
     else

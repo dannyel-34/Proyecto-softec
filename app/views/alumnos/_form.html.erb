@@ -82,7 +82,9 @@
     <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Municipio: </label>
    	<div class="col-md-4">
-      	<%= f.collection_select :municipio_id, Municipio.all, :id, :nombre, class: "form-control", prompt: "Seleccione Municipio" %>
+       <%= f.autocomplete_field :municipio_nombre, autocomplete_municipio_nombre_alumnos_path, :id_element =>'#id_municipio', class:"form-control input-lg" %>
+             <%= hidden_field_tag 'id_programa' %>
+
     </div>
     </div>
   
