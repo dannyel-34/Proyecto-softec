@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
 
 
+  resources :consulta
+
   resources :assistances do 
     post :edit_multiple, :on => :collection 
     put :update_multiple, :on => :collection

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alumno_id: 
+  curso_id: 
+  grupo_id: 
+  horario_id: 
+  institucion_id: 
+  sucursal_id: 
+  profesor_id: 
+  assistance_id: 
+
+two:
+  alumno_id: 
+  curso_id: 
+  grupo_id: 
+  horario_id: 
+  institucion_id: 
+  sucursal_id: 
+  profesor_id: 
+  assistance_id: 

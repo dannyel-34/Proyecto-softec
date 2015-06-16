@@ -1,6 +1,26 @@
 <tr id=<%= "role_#{role.id}" %>>
    <td><%= role.name %></td>
-   <td><%= link_to 'Mostrar', role, remote: true, class: "btn btn-info" if can? :read, Role %></td>
-   <td><%= link_to 'Editar', edit_role_path(role), remote: true, class: "btn btn-warning" %></td>
-   <td><%= link_to 'Eliminar', role, method: :delete, data: { confirm: 'Esta Seguro?' }, remote: true, class: "btn btn-danger" if can? :update, Role %></td>
+   <% if can? :manage, :all, Role %>
+   <td><%= link_to role, remote: true, class: "btn btn-info" if can? :read, Role do  %>
+       <span class="glyphicon glyphicon-eye-open"></span>
+   <% end %>
+   </td>
+   <td><%= link_to edit_role_path(role), remote: true, class: "btn btn-warning" do %>
+       <span class="glyphicon glyphicon-edit"></span>
+   <% end %>
+   </td>
+   <td><%= link_to role, method: :delete, data: { confirm: 'Esta Seguro?' }, remote: true, class: "btn btn-danger" do %>
+       <span class="glyphicon glyphicon-remote-circle"></span>
+   <% end %>
+   </td>
+   <% elsif can? :read, Role %>
+   <td><%= link_to role, remote: true, class: "btn btn-info" do %>
+      <span class="glyphicon glyphicon-eye-open"></span>
+   <% end %>
+   </td>
+   <td><%= link_to edit_role_path(role), remote: true, class: "btn btn-warning" do  %>
+      <span class="glyphicon glyphicon-edit"></span>
+   <% end %>
+   </td>
+   <% end %>
 </tr>    

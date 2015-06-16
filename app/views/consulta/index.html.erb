@@ -1,0 +1,39 @@
+<h1>Listing consulta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Alumno</th>
+      <th>Curso</th>
+      <th>Grupo</th>
+      <th>Horario</th>
+      <th>Institucion</th>
+      <th>Sucursal</th>
+      <th>Profesor</th>
+      <th>Assistance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @consulta.each do |consultum| %>
+      <tr>
+        <td><%= consultum.alumno %></td>
+        <td><%= consultum.curso %></td>
+        <td><%= consultum.grupo %></td>
+        <td><%= consultum.horario %></td>
+        <td><%= consultum.institucion %></td>
+        <td><%= consultum.sucursal %></td>
+        <td><%= consultum.profesor %></td>
+        <td><%= consultum.assistance %></td>
+        <td><%= link_to 'Show', consultum %></td>
+        <td><%= link_to 'Edit', edit_consultum_path(consultum) %></td>
+        <td><%= link_to 'Destroy', consultum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Consultum', new_consultum_path %>

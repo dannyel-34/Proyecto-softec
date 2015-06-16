@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615040928) do
+ActiveRecord::Schema.define(version: 20150616214956) do
 
   create_table "alumnos", force: true do |t|
     t.integer  "ficha"
@@ -73,6 +73,28 @@ ActiveRecord::Schema.define(version: 20150615040928) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "consulta", force: true do |t|
+    t.integer  "alumno_id"
+    t.integer  "curso_id"
+    t.integer  "grupo_id"
+    t.integer  "horario_id"
+    t.integer  "institucion_id"
+    t.integer  "sucursal_id"
+    t.integer  "profesor_id"
+    t.integer  "assistance_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "consulta", ["alumno_id"], name: "index_consulta_on_alumno_id"
+  add_index "consulta", ["assistance_id"], name: "index_consulta_on_assistance_id"
+  add_index "consulta", ["curso_id"], name: "index_consulta_on_curso_id"
+  add_index "consulta", ["grupo_id"], name: "index_consulta_on_grupo_id"
+  add_index "consulta", ["horario_id"], name: "index_consulta_on_horario_id"
+  add_index "consulta", ["institucion_id"], name: "index_consulta_on_institucion_id"
+  add_index "consulta", ["profesor_id"], name: "index_consulta_on_profesor_id"
+  add_index "consulta", ["sucursal_id"], name: "index_consulta_on_sucursal_id"
 
   create_table "cursos", force: true do |t|
     t.string   "nombre"
