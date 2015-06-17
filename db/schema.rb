@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616214956) do
+ActiveRecord::Schema.define(version: 20150617030118) do
 
   create_table "alumnos", force: true do |t|
     t.integer  "ficha"
@@ -95,6 +95,30 @@ ActiveRecord::Schema.define(version: 20150616214956) do
   add_index "consulta", ["institucion_id"], name: "index_consulta_on_institucion_id"
   add_index "consulta", ["profesor_id"], name: "index_consulta_on_profesor_id"
   add_index "consulta", ["sucursal_id"], name: "index_consulta_on_sucursal_id"
+
+  create_table "consultations", force: true do |t|
+    t.integer  "alumno_id"
+    t.integer  "curso_id"
+    t.integer  "grupo_id"
+    t.integer  "horario_id"
+    t.integer  "institucion_id"
+    t.integer  "sucursal_id"
+    t.integer  "profesor_id"
+    t.integer  "assistance_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "consultations", ["alumno_id"], name: "index_consultations_on_alumno_id"
+  add_index "consultations", ["assistance_id"], name: "index_consultations_on_assistance_id"
+  add_index "consultations", ["curso_id"], name: "index_consultations_on_curso_id"
+  add_index "consultations", ["grupo_id"], name: "index_consultations_on_grupo_id"
+  add_index "consultations", ["horario_id"], name: "index_consultations_on_horario_id"
+  add_index "consultations", ["institucion_id"], name: "index_consultations_on_institucion_id"
+  add_index "consultations", ["profesor_id"], name: "index_consultations_on_profesor_id"
+  add_index "consultations", ["sucursal_id"], name: "index_consultations_on_sucursal_id"
+  add_index "consultations", ["user_id"], name: "index_consultations_on_user_id"
 
   create_table "cursos", force: true do |t|
     t.string   "nombre"

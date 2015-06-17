@@ -31,6 +31,8 @@ class Ability
       can :edit, TipoDoc
       can :edit, Municipio
       can :read, Municipio
+      can :read, Consultation
+      can :edit, Consultation
     elsif user.has_role? :comun
       can :read, all
     else

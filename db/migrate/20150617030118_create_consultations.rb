@@ -1,6 +1,6 @@
-class CreateConsulta < ActiveRecord::Migration
+class CreateConsultations < ActiveRecord::Migration
   def change
-    create_table :consulta do |t|
+    create_table :consultations do |t|
       t.references :alumno, index: true
       t.references :curso, index: true
       t.references :grupo, index: true
@@ -9,6 +9,7 @@ class CreateConsulta < ActiveRecord::Migration
       t.references :sucursal, index: true
       t.references :profesor, index: true
       t.references :assistance, index: true
+      t.references :user, index: true
 
       t.timestamps
     end

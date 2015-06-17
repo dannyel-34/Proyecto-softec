@@ -9,6 +9,7 @@ one:
   sucursal_id: 
   profesor_id: 
   assistance_id: 
+  user_id: 
 
 two:
   alumno_id: 
@@ -19,3 +20,4 @@ two:
   sucursal_id: 
   profesor_id: 
   assistance_id: 
+  user_id: 

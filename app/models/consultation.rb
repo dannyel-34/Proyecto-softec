@@ -1,4 +1,4 @@
-class Consultum < ActiveRecord::Base
+class Consultation < ActiveRecord::Base
   belongs_to :alumno
   belongs_to :curso
   belongs_to :grupo
@@ -7,4 +7,5 @@ class Consultum < ActiveRecord::Base
   belongs_to :sucursal
   belongs_to :profesor
   belongs_to :assistance
+  belongs_to :user
 end

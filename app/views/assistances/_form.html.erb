@@ -45,7 +45,7 @@
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Horario: </label>
    	<div class="col-md-4">
-      	<%= f.collection_select :horario_id, Horario.all, :id, :asiste, class: "form-control", prompt: "Seleccione horario" %>
+      	<%= f.collection_select :horario_id, Horario.all, :id, :asiste, :class => 'select2', prompt: "Seleccione horario" %>
    	</div>
   </div>
   

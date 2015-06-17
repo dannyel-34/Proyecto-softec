@@ -1,0 +1,33 @@
+<tr id=<%= "consultation_#{consultation.id}" %>>
+        <td><%= consultation.alumno.nombre_completo %></td>
+        <td><%= consultation.curso.nombre %></td>
+        <td><%= consultation.grupo.nombre %></td>
+        <td><%= consultation.horario.asiste %></td>
+        <td><%= consultation.institucion.cod %></td>
+        <td><%= consultation.sucursal.cod %></td>
+        <td><%= consultation.profesor.nombre_completo %></td>
+        <td><%= consultation.user.name %></td>
+        <% if can? :manage, :all, Consultation %>
+        <td><%= link_to consultation, class: "btn btn-info btn-sm", remote: true do %>
+          <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_consultation_path(consultation), class: "btn btn-warning btn-sm",remote: true do %>
+          <span class="glyphicon glyphicon-eye-edit"></span>
+        <% end %>
+        </td>
+        <td><%= link_to consultation, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-danger btn-sm" do %>
+          <span class="glyphicon glyphicon-remote-circle"></span>
+        <% end %>
+        </td>
+        <% elsif can? :read, Consultation %>
+          <td><%= link_to consultation, class: "btn btn-info btn-sm", remote: true do %>
+          <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_consultation_path(consultation), class: "btn btn-warning btn-sm", remote: true do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        </td>
+        <% end %>
+</tr>   

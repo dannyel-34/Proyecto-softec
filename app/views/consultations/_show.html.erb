@@ -1,0 +1,47 @@
+<div class='Consulta'>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Alumno:</strong>
+  <%= @consultation.alumno.nombre_completo %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @consultation.curso.nombre %>
+</p>
+
+<p>
+  <strong>Grupo:</strong>
+  <%= @consultation.grupo.nombre %>
+</p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @consultation.horario.asiste %>
+</p>
+
+<p>
+  <strong>Institucion:</strong>
+  <%= @consultation.institucion.cod %>
+</p>
+
+<p>
+  <strong>Sucursal:</strong>
+  <%= @consultation.sucursal.cod %>
+</p>
+
+<p>
+  <strong>Profesor:</strong>
+  <%= @consultation.profesor.nombre_completo %>
+</p>
+
+
+<p>
+  <strong>User:</strong>
+  <%= @consultation.user.name %>
+</p>
+
+<%= link_to 'Edit', edit_consultation_path(@consultation) %> |
+<%= link_to 'Back', consultations_path %>
+</div>

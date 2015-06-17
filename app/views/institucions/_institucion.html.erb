@@ -5,13 +5,22 @@
     <td><%= institucion.direccion %></td>
     <td><%= institucion.telefono %></td>
     <% if can? :manage, :all, Institucion %>
-        <td><%= link_to institucion, class: "btn btn-info", remote: true do %>
-             <span class="glyphicon glyphicon-user"></span>
+        <td><%= link_to institucion, class: "btn btn-info btn-sm", remote: true do %>
+             <span class="glyphicon glyphicon-eye-open"></span>
          <% end %>
         </td>
-        <td><%= link_to 'Editar', edit_institucion_path(institucion), class: "btn btn-warning", remote: true %></td>
-        <td><%= link_to 'Eliminar', institucion, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", remote: true %></td>
-        <td><%= link_to "Sucursales", institucion_sucursals_path(institucion.id), class: "btn btn-success"%></td>
+        <td><%= link_to edit_institucion_path(institucion), class: "btn btn-warning btn-sm", remote: true do %>
+            <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        </td>
+        <td><%= link_to institucion, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm", remote: true do %>
+            <span class="glyphicon glyphicon-remote-circle"></span>
+        <% end %>
+        </td>
+        <td><%= link_to institucion_sucursals_path(institucion.id), class: "btn btn-default btn-sm" do %>
+            <span class="glyphicon glyphicon-share"></span>
+        <% end %>
+        </td>
     <% elsif can? :read, Institucion %>
         <td><%= link_to institucion, remote: true, class: "btn btn-info btn-sm"  do %>
         <span class="glyphicon glyphicon-eye-open"></span>
