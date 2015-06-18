@@ -31,3 +31,9 @@ $('.datepicker').datepicker({
     format: 'mm/dd/yyyy',
     startDate: '1900'
 })
+
+
+$('.selectpicker').selectpicker({
+      style: 'btn-info',
+      size: 4
+});

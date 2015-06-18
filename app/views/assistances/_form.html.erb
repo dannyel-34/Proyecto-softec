@@ -38,7 +38,9 @@
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Grupo: </label>
    	<div class="col-md-4">
+   	 <div class="selectpicker">
       	<%= f.collection_select :grupo_id, Grupo.all, :id, :nombre, class: "form-control", prompt: "Seleccione grupo" %>
+   	</div>
    	</div>
   </div>
   

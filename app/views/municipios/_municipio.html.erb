@@ -17,13 +17,13 @@
    <% end %>
    </td>
    <% elsif can? :read, Municipio %>
-   <td><%= link_to municipio, remote: true, class: "btn btn-info" do %>
-      <span class="glyphicon glyphicon-eye-open"></span>
-   <% end %>
-   </td>
-   <td><%= link_to edit_municipio_path(municipio), class: "btn btn-warning",  remote: true do %>
-      <span class="glyphicon glyphicon-edit"></span>
-   <% end %>
-   </td>
+      <td><%= link_to municipio, remote: true, class: "btn btn-info" do %>
+         <span class="glyphicon glyphicon-eye-open"></span>
+      <% end %>
+      </td>
+      <td><%= link_to edit_municipio_path(municipio), class: "btn btn-warning",  remote: true do %>
+         <span class="glyphicon glyphicon-edit"></span>
+      <% end %>
+      </td>
    <% end %>
 </tr>     

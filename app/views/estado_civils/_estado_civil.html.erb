@@ -1,26 +1,26 @@
 <tr id=<%= "estado_civil_#{estado_civil.id}" %>>
    <td><%= estado_civil.nombre %></td>
    <% if can? :manage, :all, EstadoCivil %>
-   <td><%= link_to estado_civil, remote: true, class: "btn btn-info" do %>
+   <td><%= link_to estado_civil, class: "btn btn-info",  remote: true  do %>
       <span class="glyphicon glyphicon-eye-open"></span>
    <% end %>
    </td>
-   <td><%= link_to edit_estado_civil_path(estado_civil),  remote: true, class: "btn btn-warning" %>
-      <span clas="glyphicon glyphicon-edit"></span>
+   <td><%= link_to edit_estado_civil_path(estado_civil), class: "btn btn-warning",  remote: true do %>
+      <span class="glyphicon glyphicon-edit"></span>
    <% end %>
    </td>
-   <td><%= link_to estado_civil, method: :delete, data: { confirm: 'Esta Seguro?' },  remote: true, class: "btn btn-danger" do %>
-      <span class="glyphicon glyphicon-remote-circle"></span>
+   <td><%= link_to estado_civil, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-danger",  remote: true do %>
+   <span class="glyphicon glyphicon-remote-circle"></span>
    <% end %>
    </td>
    <% elsif can? :read, EstadoCivil %>
    <td><%= link_to estado_civil, remote: true, class: "btn btn-info" do %>
-      <span class="glyphicon glyphicon-eye-open"></span>
+         <span class="glyphicon glyphicon-eye-open"></span>
    <% end %>
    </td>
-   <td><%= link_to edit_estado_civil_path(estado_civil),  remote: true, class: "btn btn-warning" do %>
+   <td><%= link_to edit_estado_civil_path(estado_civil), class: "btn btn-warning",  remote: true do %>
       <span class="glyphicon glyphicon-edit"></span>
    <% end %>
    </td>
    <% end %>
-</tr>    
+</tr>     
