@@ -15,7 +15,7 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Alumno: </label>
    	<div class="col-md-4">
-      <%= f.collection_select :alumno_id, Alumno.all, :id, :nombre_completo, class: "form-control", prompt: "Seleccione Municipio" %>
+      <%= f.collection_select :alumno_id, Alumno.all, :id, :nombre_completo, { }, class: "form-control", prompt: "Seleccione Alumno" %>
     </div>
   </div>
     
@@ -23,49 +23,49 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Materia: </label>
    	<div class="col-md-4">
-    <%= f.collection_select :curso_id, Curso.all, :id, :nombre, class: "form-control", prompt: "Seleccione Municipio" %>
+    <%= f.collection_select :curso_id, Curso.all, :id, :nombre, { }, class: "form-control", prompt: "Seleccione Materia" %>
   </div>
   </div>
   
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Grupo: </label>
    	<div class="col-md-4">
-      <%= f.collection_select :grupo_id, Grupo.all, :id, :nombre, class: "form-control", prompt: "Seleccione Municipio" %>
+      <%= f.collection_select :grupo_id, Grupo.all, :id, :nombre, { }, class: "form-control", prompt: "Seleccione Grupo" %>
   </div>
   </div>
   
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Nombre</label>
    	<div class="col-md-4">
-    <%= f.collection_select :horario_id, Horario.all, :id, :asiste, class: "form-control", prompt: "Seleccione Municipio" %>
+    <%= f.collection_select :horario_id, Horario.all, :id, :asiste,  { }, class: "form-control", prompt: "Seleccione Nombre" %>
   </div>
   </div>
   
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Institucion: </label>
    	<div class="col-md-4">
-    <%= f.collection_select :institucion_id, Institucion.all, :id, :cod, class: "form-control", prompt: "Seleccione Municipio" %>
+    <%= f.collection_select :institucion_id, Institucion.all, :id, :cod, { }, class: "form-control", prompt: "Seleccione Institucion" %>
   </div>
   </div>
   
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Sucursal: </label>
    	<div class="col-md-4">
-    <%= f.collection_select :sucursal_id, Sucursal.all, :id, :cod, class: "form-control", prompt: "Seleccione Municipio" %>
+    <%= f.collection_select :sucursal_id, Sucursal.all, :id, :cod, { }, class: "form-control", prompt: "Seleccione Sucursal" %>
   </div>
   </div>
   
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Docente: </label>
    	<div class="col-md-4">
-    <%= f.collection_select :profesor_id, Profesor.all, :id, :nombre_completo, class: "form-control", prompt: "Seleccione Municipio" %>
+    <%= f.collection_select :profesor_id, Profesor.all, :id, :nombre_completo, { }, class: "form-control", prompt: "Seleccione Docente" %>
   </div>
   </div>
   
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Usuarios: </label>
    	<div class="col-md-4">
-    <%= f.collection_select :user_id, User.all, :id, :name, class: "form-control", prompt: "Seleccione Municipio" %>
+    <%= f.collection_select :user_id, User.all, :id, :name, { }, class: "form-control", prompt: "Seleccione Usuario" %>
   </div>
   </div>
   

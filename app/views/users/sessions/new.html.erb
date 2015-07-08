@@ -1,22 +1,33 @@
+<div class="container">
+  <div class="BannerImagen">
+    <%= link_to (image_tag('bannerLogin.jpg')), class: "bannerLo" %>
+  </div>
+  <div class="BannerText">
+    <h2 class="ttituloLogin">Sistema de Educacion y <br> Registro Online</h2>
+  </div>
+</div>
+
+<div class="SloganHeader">
+  <%= link_to (image_tag('Logo-soft.png')), id: "bannerLol" %>
+</div>
+
 <div class="authform">
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <center><h3>Inicio de Sesión</h3></center>
-    <br>
     
     <%= devise_error_messages! %>
     <div class="form-group">
       <%- if devise_mapping.registerable? %>
-        <%= link_to 'Registrarse', new_registration_path(resource_name), class: 'right'  %>
+        <%= link_to 'Registrarse', new_registration_path(resource_name), class: 'right', id: "ovi2" %>
       <% end -%>
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control', :required => true, title: "Usted debe ingresar un correo electronico" %>
+      <%= f.label :correo_electronico %>
+      <%= f.email_field :email, :autofocus => true, class: 'form-control', :required => true, title: "Usted debe ingresar un correo electronico", placeholder: "correo electronico" %>
     </div>
     <div class="form-group">
       <%- if devise_mapping.recoverable? %>
-        <%= link_to "Olvidaste tu contraseña?", new_password_path(resource_name), class: 'right' %>
+        <%= link_to "¿No puedes acceder a tu cuenta?", new_password_path(resource_name), class: 'right', id: "olvi" %>
       <% end -%>
       <%= f.label :contraseña %>
-      <%= f.password_field :password, class: 'form-control', :required => true, title: "Usted debe ingresar una contraseña" %>
+      <%= f.password_field :password, class: 'form-control', :required => true, title: "Usted debe ingresar una contraseña", placeholder: "contraseña" %>
     </div>
       <%= f.submit 'Entrar', :class => 'button right' %>
       <% if devise_mapping.rememberable? -%>
@@ -27,4 +38,5 @@
         </div>
       <% end -%>
   <% end %>
+
 </div>

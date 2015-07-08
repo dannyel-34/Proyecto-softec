@@ -34,7 +34,7 @@ class UsersController < ApplicationController
           User.all.each do |u|
         UserMailer.welcome_email(u).deliver
         end
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'Usuario se ha creado correctamente.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         @user.role_ids = params[:user][:role_ids] #Esta es la línea que tenemos que agregar.
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Usuario se ha actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'Usuario se ha eliminado correctamente.' }
       format.json { head :no_content }
     end
   end

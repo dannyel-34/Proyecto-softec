@@ -18,11 +18,11 @@
         <% end %>
         </td>
         <% elsif can? :read, Horario %>
-        <td><%= link_to horario, class: "btn btn-info", remote: true do %>
+        <td><%= link_to horario, class: "btn btn-info btn-sm", remote: true do %>
                 <span class="glyphicon glyphicon-eye-open"></span>
         <% end %>
         </td>
-        <td><%= link_to edit_horario_path(horario), class: "btn btn-warning", remote: true do %>
+        <td><%= link_to edit_horario_path(horario), class: "btn btn-warning btn-sm", remote: true do %>
                 <span class="glyphicon glyphicon-edit"></span>
         <% end %>
         </td>

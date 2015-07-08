@@ -79,8 +79,9 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 2px inset #eaeaea;
   color: #777;
+
 }
 
 footer a {
@@ -145,7 +146,8 @@ footer ul li {
 
 .list-unstyled-1{
     position: relative;
-    
+    left: -239px;
+    top: 35px;
 }
 
 
@@ -641,8 +643,149 @@ left: 14px;
 
 
 
-.hr {border: 0; height: 2px; text-align: center; background-image: linear-gradient(left, #fff, #000, #fff);}
+.hr {
+    border: 0; 
+    height: 2px; 
+    text-align: center; 
+    background-image: linear-gradient(left, #fff, #000, #fff);
     
+}
+    
+.BannerImagen{
+    position: absolute;
+    left: 100px;
+    top: -30px;
+}
+
+.BannerText{
+    position: absolute;
+    background: #0B3144;
+    width: 41%;
+    height: 36%;
+    left: 100px;
+    top: 218px;
+}
+
+.ttituloLogin{
+    font-family:Andalus, "Arabic Typesetting", "Arial Rounded MT Bold";
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff; 
+}
 
 
 
+.authformLOGIN{
+    width: 12px;
+}
+
+
+.SloganHeader{
+    position: absolute;
+    left: 711px;
+    top: -18px;
+}
+
+#bannerLol{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+}
+
+#olvi{
+    position: absolute;
+    top: 290px;
+}
+
+#ovi2{
+    position: absolute;
+    top: 264px;
+
+}
+
+
+.list-unstyled-2{
+    position: absolute;
+    top: 44px;
+}
+
+
+.redS{
+  position: relative;
+  top: -13px;
+  left: 47px;
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+}
+
+.folder1{
+    position: absolute;
+    top: 161px;
+    left: 70px;
+
+}
+
+.folder2{
+    position: absolute;
+    top: 161px;
+    left: 70px;
+
+}
+
+.folder3{
+    position: absolute;
+    top: 283px;
+    left: 64px;
+
+
+}
+
+.folder4{
+    position: absolute;
+    top: 449px;
+    left: 67px;
+
+}
+.folder5{
+    position: absolute;
+    top: 580px;
+    left: 68px;
+    
+}
+.folder6{
+    position: absolute; 
+    
+}
+.folder7{
+    position: absolute;
+    top: 731px;
+    left: 69px; 
+    
+}
+.title-1{
+    position:absolute;
+    top: 159px;
+    left: 180px;
+    font-size: 24px;
+    font-family: Century Gothic;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+
+.title-2{
+    position:absolute;
+    top: 293px;
+    left: 172px;
+    font-size: 24px;
+    font-family: Century Gothic;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+
+.panel-title-1{
+    position: absolute;
+    top: 5px;
+}

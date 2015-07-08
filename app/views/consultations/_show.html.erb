@@ -44,6 +44,8 @@
   <%= @consultation.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_consultation_path(@consultation) %> |
-<%= link_to 'Back', consultations_path %>
+<center>
+<%= link_to 'Editar', edit_consultation_path(@consultation), class: "btn btn-warning btn-sm" %> |
+<%= link_to 'Atras', consultations_path, class: "btn btn-success btn-sm" %>
+</center>
 </div></div></div>

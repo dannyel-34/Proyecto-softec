@@ -26,10 +26,16 @@
         </address>
     </div>
     
-     <div class="col-xs-4">
+    <div class="col-xs-4">
+        <h6 class="redS">Redes Sociales</h6>
+        <ul class="list-unstyled-2">
+             <li><a href="http://www.facebook.com"><%= link_to (image_tag('facebook-icon.png')), class: "imag2" %></a></li>
+             <li><a href="http://www.twitter.com"><%= link_to (image_tag('twitter-icon.png')), class: "imag2" %></a></li>
+        </ul>
+        <br><br>
         <ul class="list-unstyled-1">
-          <li><%= link_to "Acerca",   about_path %></li>
-          <li><%= link_to "Contacto", new_comentario_path %></li>
+          <li><%= link_to "Acerca", about_path %></li><br>
+          <li><%= link_to "Contacto", new_comentario_path %></li><br>
           <li><%= link_to "Ayuda",   help_path %></li>
         </ul>
     </div>

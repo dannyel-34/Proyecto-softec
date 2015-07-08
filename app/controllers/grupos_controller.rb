@@ -34,7 +34,7 @@ class GruposController < ApplicationController
   def update
     respond_to do |format|
       if @grupo.update(grupo_params)
-        format.html { redirect_to curso_grupos_path(@curso), notice: 'sucursals was successfully updated.' }
+        format.html { redirect_to curso_grupos_path(@curso), notice: 'sucursals se ha actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @grupo }
       else
         format.html { render :edit }

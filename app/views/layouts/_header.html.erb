@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
           
-            <li><%= link_to "Inicio", home_path %></li>
+            <li><%= link_to "Inicio", home2_path %></li>
             
        
             <li class="dropdown">
@@ -88,6 +88,7 @@
               <li><%= link_to "Inicio", home_path %></li>
               <li><%= link_to "Registrarse", new_user_registration_path %></li>
               <li><%= link_to "Iniciar sesion", new_user_session_path %></li>
+              <li><%= link_to "Acerca", about_path %></li>
         <% end %>
        
       </ul>

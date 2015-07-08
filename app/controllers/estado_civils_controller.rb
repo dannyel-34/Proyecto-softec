@@ -28,7 +28,7 @@ class EstadoCivilsController < ApplicationController
 
     respond_to do |format|
       if @estado_civil.save
-        format.html { redirect_to @estado_civil, notice: 'Estado civil was successfully created.' }
+        format.html { redirect_to @estado_civil, notice: 'Estado civil se ha creado correctamente.' }
         format.json { render :show, status: :created, location: @estado_civil }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class EstadoCivilsController < ApplicationController
   def update
     respond_to do |format|
       if @estado_civil.update(estado_civil_params)
-        format.html { redirect_to @estado_civil, notice: 'Estado civil was successfully updated.' }
+        format.html { redirect_to @estado_civil, notice: 'Estado civil se ha actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @estado_civil }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class EstadoCivilsController < ApplicationController
   def destroy
     @estado_civil.destroy
     respond_to do |format|
-      format.html { redirect_to estado_civils_url, notice: 'Estado civil was successfully destroyed.' }
+      format.html { redirect_to estado_civils_url, notice: 'Estado civil se ha eliminado correctamente.' }
       format.json { head :no_content }
     end
   end

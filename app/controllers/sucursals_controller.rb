@@ -21,7 +21,7 @@ class SucursalsController < ApplicationController
     @sucursal.institucion_id = @institucion.id
     respond_to do |format|
       if @sucursal.save
-        format.html { redirect_to institucion_sucursals_path(@institucion), notice: 'sucursal was successfully created.' }
+        format.html { redirect_to institucion_sucursals_path(@institucion), notice: 'sucursal se ha creado correctamente.' }
         format.json { render :show, status: :created, location: @sucursal }
       else
         format.html { render :new }
@@ -33,7 +33,7 @@ class SucursalsController < ApplicationController
   def update
     respond_to do |format|
       if @sucursal.update(sucursal_params)
-        format.html { redirect_to institucion_sucursals_path(@institucion), notice: 'sucursals was successfully updated.' }
+        format.html { redirect_to institucion_sucursals_path(@institucion), notice: 'sucursal se ha actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @sucursal }
       else
         format.html { render :edit }

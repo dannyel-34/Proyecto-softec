@@ -38,20 +38,13 @@ Rails.application.routes.draw do
   resources :tipo_docs
 
   get 'static_pages/home'
-
   get 'static_pages/help'
-
   get 'static_pages/contact'
-
   get 'static_pages/about'
-  
   get 'static_pages/ver'
-  
   get 'static_pages/v2'
-  
   get 'static_pages/v3'
-  
-  
+  get 'static_pages/home2'
   
   
   match '/home', to: 'static_pages#home',  via: 'get'
@@ -61,7 +54,8 @@ Rails.application.routes.draw do
   match '/ver', to: 'static_pages#ver',  via: 'get'
   match '/v2', to: 'static_pages#v2',  via: 'get'
   match '/v3', to: 'static_pages#v3',  via: 'get'
-
+  match '/home2', to: 'static_pages#home2',  via: 'get'
+  
   root :to => 'static_pages#home'
 
 
