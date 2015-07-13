@@ -4,7 +4,7 @@
         <td><%= assistance.profesor.nombre %></td>
         <td><%= assistance.curso.nombre %></td>
         <td><%= assistance.grupo.nombre %></td>
-        <td><%= assistance.horario.asiste %></td>
+        <td><%= mostrar_horario(assistance.horario.asiste) %></td>
         <td><%= assistance.fch %></td>
         <% if can? :manage, :all, Assistance %>
         <td><%= link_to assistance, class: "btn btn-info btn-sm", remote: true do %>

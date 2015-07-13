@@ -84,6 +84,10 @@
   <%= @alumno.estado_civil.nombre %>
 </p>
 
+<p>
+  <%= link_to "PDF", alumno_path(@alumno, :format => 'pdf'), class: "btn btn-default"%>
+</p>
+
 </div>
 </div>
 </div>

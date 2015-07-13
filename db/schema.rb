@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617030118) do
+ActiveRecord::Schema.define(version: 20150708160521) do
 
   create_table "alumnos", force: true do |t|
     t.integer  "ficha"
@@ -192,13 +192,13 @@ ActiveRecord::Schema.define(version: 20150617030118) do
     t.string   "telefono"
     t.integer  "doc_identidad"
     t.integer  "tipo_doc_id"
-    t.integer  "estado_civils_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "fch_nacimiento"
+    t.integer  "estado_civil_id"
   end
 
-  add_index "profesors", ["estado_civils_id"], name: "index_profesors_on_estado_civils_id"
+  add_index "profesors", ["estado_civil_id"], name: "index_profesors_on_estado_civil_id"
   add_index "profesors", ["tipo_doc_id"], name: "index_profesors_on_tipo_doc_id"
 
   create_table "roles", force: true do |t|

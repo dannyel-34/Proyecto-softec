@@ -1,8 +1,7 @@
 class AlumnosController < ApplicationController
   before_action :set_alumno, only: [:show, :edit, :update, :destroy]
   autocomplete :municipio, :nombre, :full => true
-  respond_to :html
-
+  
   def index
     @alumnos = Alumno.search(params[:search], params[:page])
   end
@@ -24,11 +23,11 @@ class AlumnosController < ApplicationController
   end
 
   def update
-    valores = alumno_params
-    valores["municipio_id"] = params[:id_municipio] # captura el valor del id dem municipio del autocomplete
-    respond_to do |format|
-        if @persona.update(valores)
-          format.html { redirect_to @alumno, notice: 'Alumno se ha a actualizado correctamente.' }
+      valores = alumno_params
+      valores["municipio_id"] = params[:id_municipio] # captura el valor del id dem municipio del autocomplete
+      respond_to do |format|
+        if @alumno.update(valores)
+          format.html { redirect_to @alumno, notice: 'Alumno was successfully updated.' }
           format.json { render :show, status: :ok, location: @alumno }
         else
           format.html { render :edit }

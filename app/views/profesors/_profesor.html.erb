@@ -7,9 +7,15 @@
         <td><%= profesor.direccion %></td>
         <td><%= profesor.telefono %></td>
         <td><%= profesor.doc_identidad %></td>
-        <td><%= profesor.tipo_doc.nombre %></td>
-        <td><%= profesor.estado_civils.nombre %></td>
-        <td><%= link_to 'Mostrar', profesor, remote: true, class: "btn btn-info" if can? :read, Profesor %></td>
-        <td><%= link_to 'Editar', edit_profesor_path(profesor), remote: true, class: "btn btn-warning" %></td>
+        <td><%= profesor.tipo_doc_id %></td>
+        <td><%= profesor.estado_civil_id %></td>
+        <td><%= link_to profesor, remote: true, class: "btn btn-info btn-sm" do %>
+        <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_profesor_path(profesor), remote: true, class: "btn btn-warning btn-sm" do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        </td>
         <td><%= link_to 'Eliminar', profesor, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-danger" if can? :update, Profesor %></td>
 </tr>     

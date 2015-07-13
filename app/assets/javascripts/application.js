@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/autocomplete
+//= require jquery-ui
 //= require autocomplete-rails
+//= require jquery-ui/autocomplete
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
@@ -27,10 +28,17 @@ $(document).on('ready page:load', function () {
 
 
 
-$('.datepicker').datepicker({
-    format: 'mm/dd/yyyy',
-    startDate: '1900'
-})
+$(document).ready(function(){
+ 
+   $('.datepicker').datepicker({
+     format: "yyyy-mm-dd",
+     viewMode: "years", 
+     firstDay: 1,
+     autoclose: true,
+     language: 'es'
+   });
+   
+});
 
 
 $('.selectpicker').selectpicker({

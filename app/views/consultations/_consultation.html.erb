@@ -1,12 +1,13 @@
 <tr id=<%= "consultation_#{consultation.id}" %>>
-        <td><%= consultation.alumno.nombre_completo %></td>
-        <td><%= consultation.curso.nombre %></td>
-        <td><%= consultation.grupo.nombre %></td>
+       
+        <td><%= link_to consultation.alumno.nombre_completo, consultation, remote: true %></td>
+        <td><%= link_to consultation.curso.nombre, curso_path(consultation.curso_id), remote: true %></td>
+        <td><%= link_to consultation.grupo.nombre, curso_grupos_path(consultation.grupo_id), remote: true %></td>
         <td><%= consultation.horario.asiste %></td>
         <td><%= consultation.institucion.cod %></td>
         <td><%= consultation.sucursal.cod %></td>
-        <td><%= consultation.profesor.nombre_completo %></td>
-        <td><%= consultation.user.name %></td>
+        <td><%= link_to consultation.profesor.nombre_completo, profesor_path(consultation.profesor_id), remote: true %></td>
+        <td><%= link_to consultation.user.name, user_path(consultation.user_id), remote: true %></td>
         <% if can? :manage, :all, Consultation %>
         <td><%= link_to consultation, class: "btn btn-info btn-sm", remote: true do %>
           <span class="glyphicon glyphicon-eye-open"></span>

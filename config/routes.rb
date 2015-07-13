@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :horarios
 
-  resources :alumnos
+  resources :alumnos do
+    get :autocomplete_municipio_nombre, :on => :collection
+  end
 
   resources :cursos do
       resources :grupos
@@ -32,8 +34,8 @@ Rails.application.routes.draw do
   resources :comentarios
 
   resources :estado_civils
-
-  resources :municipios
+  
+  resources :municipios 
 
   resources :tipo_docs
 

@@ -85,9 +85,18 @@
             </ul>
         </li>
         <% else %>
-              <li><%= link_to "Inicio", home_path %></li>
-              <li><%= link_to "Registrarse", new_user_registration_path %></li>
-              <li><%= link_to "Iniciar sesion", new_user_session_path %></li>
+              <li><%= link_to  home_path do %>
+              <span class="glyphicon glyphicon-home"></span>  Inicio
+              <% end %>
+              </li>
+              <li><%= link_to new_user_registration_path do %>
+              <span class="glyphicon glyphicon-log-out"></span> Registrarse
+              <% end %>
+              </li>
+              <li><%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-log-in"></span> Inicar Sesión
+              <% end %>
+              </li>
               <li><%= link_to "Acerca", about_path %></li>
         <% end %>
        

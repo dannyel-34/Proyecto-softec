@@ -58,9 +58,13 @@ gem 'paperclip', '~> 4.1'
 
 gem 'cancancan'
 
-gem 'rails4-autocomplete'
+gem 'rails4-autocomplete', '~> 1.1.1'
 gem 'jquery-ui-rails'
+
 gem 'bootstrap-datepicker-rails'
 
 gem 'carrierwave' 
 gem 'dotenv-rails'
+
+gem "prawn"
+gem "prawnto_2", :require => "prawnto"

@@ -56,10 +56,6 @@ class ComentariosController < ApplicationController
   # DELETE /comentarios/1.json
   def destroy
     @comentario.destroy
-    respond_to do |format|
-      format.html { redirect_to comentarios_url, notice: 'Comentario se ha eliminado correctamente.' }
-      format.json { head :no_content }
-    end
   end
 
   private

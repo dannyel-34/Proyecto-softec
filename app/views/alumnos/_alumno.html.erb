@@ -36,6 +36,11 @@
         <td><%= link_to edit_alumno_path(alumno), class: "btn btn-warning btn-sm", remote: true do %>
                 <span class="glyphicon glyphicon-edit"></span>
         <% end %>
+        <td>
+            <%= link_to alumno_path(alumno, :format => 'pdf'), class: "btn btn-success btn-sm" do %>
+                    <span class="glyphicon glyphicon-export"></span>
+            <% end %>
+        </td>
         </td>
         <% end %>
 </tr>     

@@ -20,6 +20,15 @@
   </tbody>
 </table>
 
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active">
+    <%= link_to "Alumnos", alumnos_path %>
+  </li>
+  <li role="presentation"><%= link_to "Curso", cursos_path %></li>
+  <li role="presentation"><%= link_to "Institucion", institucions_path %></li>
+  <li role="presentation"><%= link_to "Docente", profesors_path %></li>
+</ul>
+
 <br>
 
 <%= link_to 'Nuevo', new_consultation_path, class: "btn btn-info btn-sm", remote: true %>
