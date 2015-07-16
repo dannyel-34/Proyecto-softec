@@ -1,0 +1,66 @@
+<div class="acudientes">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @acudiente.nombre %>
+</p>
+
+<p>
+  <strong>Primer apellido:</strong>
+  <%= @acudiente.primer_apellido %>
+</p>
+
+<p>
+  <strong>Segundo apellido:</strong>
+  <%= @acudiente.segundo_apellido %>
+</p>
+
+<p>
+  <strong>Nombre completo:</strong>
+  <%= @acudiente.nombre_completo %>
+</p>
+
+<p>
+  <strong>Mail:</strong>
+  <%= @acudiente.mail %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @acudiente.telefono %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @acudiente.documento %>
+</p>
+
+<p>
+  <strong>Tipo doc:</strong>
+  <%= @acudiente.tipo_doc %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <%= @acudiente.estado_civil %>
+</p>
+
+<p>
+  <strong>Fch:</strong>
+  <%= @acudiente.fch %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @acudiente.direccion %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @acudiente.municipio %>
+</p>
+
+<%= link_to 'Edit', edit_acudiente_path(@acudiente) %> |
+<%= link_to 'Back', acudientes_path %>
+</div>

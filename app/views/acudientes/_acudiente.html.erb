@@ -1,0 +1,17 @@
+<tr id=<%= "acudiente_#{acudiente.id}" %>>
+        <td><%= acudiente.nombre %></td>
+        <td><%= acudiente.primer_apellido %></td>
+        <td><%= acudiente.segundo_apellido %></td>
+        <td><%= acudiente.nombre_completo %></td>
+        <td><%= acudiente.mail %></td>
+        <td><%= acudiente.telefono %></td>
+        <td><%= acudiente.documento %></td>
+        <td><%= acudiente.tipo_doc %></td>
+        <td><%= acudiente.estado_civil %></td>
+        <td><%= acudiente.fch %></td>
+        <td><%= acudiente.direccion %></td>
+        <td><%= acudiente.municipio %></td>
+        <td><%= link_to 'Mostrar', acudiente, class="btn btn-info", remote: true  %></td>
+        <td><%= link_to 'Editar', edit_acudiente_path(acudiente), class="btn btn-warning", remote: true %></td>
+        <td><%= link_to 'Eliminar', acudiente, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class="btn btn-danger" %></td>
+</tr>  

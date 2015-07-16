@@ -1,0 +1,1 @@
+json.extract! @acudiente, :id, :nombre, :primer_apellido, :segundo_apellido, :nombre_completo, :mail, :telefono, :documento, :tipo_doc_id, :estado_civil_id, :fch, :direccion, :municipio_id, :created_at, :updated_at

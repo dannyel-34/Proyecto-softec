@@ -74,15 +74,8 @@
   <%= @alumno.fch_nacimiento %>
 </p>
 
-<p>
-  <strong>Edad:</strong>
-  <%= calcular_edad(@alumno.fch_nacimiento) %>
-</p>
 
-<p>
-  <strong>Estado civil:</strong>
-  <%= @alumno.estado_civil.nombre %>
-</p>
+
 
 <p>
   <%= link_to "PDF", alumno_path(@alumno, :format => 'pdf'), class: "btn btn-default"%>

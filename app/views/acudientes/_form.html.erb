@@ -1,0 +1,125 @@
+<%= simple_form_for(@acudiente, :html => { :class => 'form-horizontal', remote: true } ) do |f| %>
+
+  <% if @acudiente.errors.any? %>
+	<div id="error_explanation">
+  	<h2><%= pluralize(@acudiente.errors.count, "error") %> prohibited this municipio from being saved:</h2>
+
+  	<ul>
+  	<% @acudiente.errors.full_messages.each do |message| %>
+    	<li><%= message %></li>
+  	<% end %>
+  	</ul>
+	</div>
+  <% end %>
+
+<div class="row">
+ <div class="col-xs-6">
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Nombre</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :nombre, class: 'form-control' %>
+   	</div>
+  </div>
+ </div>
+ <div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">primer Apellido</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :primer_apellido, class: 'form-control' %>
+   	</div>
+  </div>
+</div>
+<div class="col-xs-6">
+  <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">segundo Apellido</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :segundo_apellido, class: 'form-control' %>
+   	</div>
+  </div>
+ </div>
+ <div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">nombre Completo</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :nombre_completo, class: 'form-control' %>
+   	</div>
+  </div>
+ </div>
+ <div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Correo electronico</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :mail, class: 'form-control' %>
+   	</div>
+  </div>
+ </div>
+ <div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Telefono</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :telefono, class: 'form-control' %>
+   	</div>
+  </div>
+  </div>
+  <div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Documento ID</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :documento, class: 'form-control' %>
+   	</div>
+  </div>
+  </div>
+  <div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Seleccione Tipo documento</label>
+   	<div class="col-md-4">
+      	<%= f.collection_select :tipo_doc_id, TipoDoc.all, :id, :nombre, {}, class: "form-control", prompt: "Seleccione documento" %>
+   	</div>
+  </div>
+  </div>
+  <div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Estado civil</label>
+   	<div class="col-md-4">
+      	 <%= f.collection_select :estado_civil_id, EstadoCivil.all, :id, :nombre, {}, class: "form-control", prompt: "Seleccione estado civil" %>
+   	</div>
+  </div>
+  </div>
+
+  <div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Fecha de nacimiento</label>
+   	<div class="col-md-4">
+      	<%= f.text_field :fch, 'data-provide' => "datepicker", class: "form-control", size: "40", width: "20", heigth: "62" %>
+   	</div>
+  </div>
+ </div>
+ 
+<div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Direccion</label>
+   	<div class="col-md-4">
+      	<%= f.input_field :direccion, class: 'form-control' %>
+   	</div>
+  </div>
+</div>
+
+<div class="col-xs-6">
+   <div class="form-group">
+   	<label for="name" class="col-sm-3 control-label">Municipio de residencia</label>
+   	<div class="col-md-4">
+      	 <%= f.autocomplete_field :municipio_nombre, autocomplete_municipio_nombre_acudientes_path, 
+        :id_element => '#id_municipio',   class: "form-control" %>
+        <%= hidden_field_tag 'id_municipio' %>
+   	</div>
+  </div>
+</div>
+<div class="col-xs-6">
+ <div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+  	<%= f.submit "Guardar", class: "btn btn-sm btn-success" %>
+	</div>
+ </div>
+ </div>
+</div>
+<% end %>

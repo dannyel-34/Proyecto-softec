@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
           User.all.each do |u|
-        UserMailer.welcome_email(u).deliver
+          UserMailer.welcome_email(u).deliver
         end
         format.html { redirect_to @user, notice: 'Usuario se ha creado correctamente.' }
         format.json { render :show, status: :created, location: @user }

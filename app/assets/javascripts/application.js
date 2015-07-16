@@ -40,8 +40,15 @@ $(document).ready(function(){
    
 });
 
+$(function() {
+   $('#flash').delay(400).fadeIn('normal', function() {
+      $(this).delay(1200).fadeOut();
+   });
+});
+
 
 $('.selectpicker').selectpicker({
       style: 'btn-info',
       size: 4
 });
+

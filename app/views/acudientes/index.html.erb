@@ -1,4 +1,4 @@
-<h1>Listado de profesores</h1>
+<h1>Listado acudientes</h1>
 
 <table class="table table-bordered">
   <thead>
@@ -7,22 +7,23 @@
       <th>Primer apellido</th>
       <th>Segundo apellido</th>
       <th>Nombre completo</th>
-      <th>Fecha de nacimiento</th>
-      <th>Edad</th>
-      <th>Direccion</th>
+      <th>Mail</th>
       <th>Telefono</th>
-      <th>Doc identidad</th>
+      <th>Documento</th>
       <th>Tipo doc</th>
-      <th>Estado civils</th>
+      <th>Estado civil</th>
+      <th>Fch</th>
+      <th>Direccion</th>
+      <th>Municipio</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-   <%= render @profesors %>
+     <%= render @acudientes %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'Nuevo', new_profesor_path, remote: true,  class: "btn btn-info" %>
+<%= link_to 'Nuevo', new_acudiente_path, remote: true, class: "btn btn-primary btn-sm" %>

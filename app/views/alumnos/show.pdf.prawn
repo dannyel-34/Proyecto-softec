@@ -30,7 +30,7 @@ text "Tipo documento: #{@alumno.tipo_doc.nombre}"
 
 text "fecha nacimiento: #{@alumno.fch_nacimiento}"
 
-text "Estado civil: #{@alumno.estado_civil.nombre}"
+
 
 
 pdf.move_down(10)

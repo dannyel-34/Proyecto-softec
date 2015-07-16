@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
 
+  resources :acudientes do
+    get :autocomplete_municipio_nombre, :on => :collection
+  end
 
   resources :consultations
 

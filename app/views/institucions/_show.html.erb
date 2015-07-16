@@ -29,6 +29,12 @@
   <%= @institucion.telefono %>
 </p>
 
+<p>
+  <%= link_to institucion_path(@institucion, :format => 'pdf'), class: "btn btn-success btn-sm" do %>
+    <span class="glyphicon glyphicon-export"></span>
+  <% end %>
+</p>
+
 </div>
 </div>
 </div>

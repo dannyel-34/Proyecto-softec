@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708160521) do
+ActiveRecord::Schema.define(version: 20150715203901) do
+
+  create_table "acudientes", force: true do |t|
+    t.string   "nombre"
+    t.string   "primer_apellido"
+    t.string   "segundo_apellido"
+    t.string   "nombre_completo"
+    t.string   "mail"
+    t.string   "telefono"
+    t.string   "documento"
+    t.integer  "tipo_doc_id"
+    t.integer  "estado_civil_id"
+    t.date     "fch"
+    t.string   "direccion"
+    t.integer  "municipio_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "acudientes", ["estado_civil_id"], name: "index_acudientes_on_estado_civil_id"
+  add_index "acudientes", ["municipio_id"], name: "index_acudientes_on_municipio_id"
+  add_index "acudientes", ["tipo_doc_id"], name: "index_acudientes_on_tipo_doc_id"
 
   create_table "alumnos", force: true do |t|
     t.integer  "ficha"

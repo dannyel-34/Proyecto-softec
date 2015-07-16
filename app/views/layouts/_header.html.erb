@@ -57,6 +57,8 @@
                 <li class="dropdown-header">Directivos</li>
                 <li><%= link_to "Docentes", profesors_path %></li>
                 <li class="divider"></li>
+                <li><%= link_to "Estudiantes", alumnos_path %></li>
+                <li class="divider"></li>
                 <li class="dropdown-header">Administracion provincias</li>
                 <li><%= link_to "Municipios", municipios_path %></li>
                 <li class="divider"></li>
@@ -66,8 +68,7 @@
                 <li class="dropdown-header">Informacion usuarios</li>
                 <li><%= link_to "Tipos de documentos", tipo_docs_path %></li>
                 <li><%= link_to "Estado civil", estado_civils_path %></li>
-                <li class="divider"></li>
-                <li><%= link_to "Alumnos", alumnos_path %></li>
+        
                 
             </ul>
         </li>
@@ -89,15 +90,18 @@
               <span class="glyphicon glyphicon-home"></span>  Inicio
               <% end %>
               </li>
-              <li><%= link_to new_user_registration_path do %>
-              <span class="glyphicon glyphicon-log-out"></span> Registrarse
-              <% end %>
-              </li>
               <li><%= link_to new_user_session_path do %>
               <span class="glyphicon glyphicon-log-in"></span> Inicar Sesión
               <% end %>
               </li>
-              <li><%= link_to "Acerca", about_path %></li>
+              <li><%= link_to new_user_registration_path do %>
+              <span class="glyphicon glyphicon-log-out"></span> Registrarse
+              <% end %>
+              </li>
+              <li><%= link_to  about_path do %>
+              <span class="glyphicon glyphicon-info-sign"></span> Acerca
+              <% end %>
+              </li>
         <% end %>
        
       </ul>
