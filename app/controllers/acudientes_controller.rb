@@ -20,6 +20,7 @@ class AcudientesController < ApplicationController
   def create
     @acudiente = Acudiente.new(acudiente_params)
     @acudiente.save
+    AcudienteMailer.welcome_email(u).deliver
   end
   
   def update

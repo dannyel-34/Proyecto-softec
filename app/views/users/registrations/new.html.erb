@@ -6,6 +6,16 @@
     <br>
   <br>
   
+  
+   <% for role in Role .all %>
+<div>
+<%= check_box_tag "user[role_ids][]" , role.id, @user.roles.include?(role) %>
+<%=h role.name %>
+</div>
+<% end %>
+<%= hidden_field_tag "user[role_ids][]" , "" %>
+    <br>
+
     <div class="form-group">
       <%= f.label :nombre %>
       <%= f.text_field :name, :autofocus => true, class: 'form-control', placeholder: "nombre", :required => true, title: "Usted debe ingresar su nombre"%>

@@ -1,5 +1,6 @@
 <h1>Listado acudientes</h1>
 
+<div class="table-responsive">
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -23,7 +24,7 @@
      <%= render @acudientes %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'Nuevo', new_acudiente_path, remote: true, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Nuevo', new_acudiente_path, class: "btn btn-primary btn-sm" %>

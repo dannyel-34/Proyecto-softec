@@ -17,18 +17,18 @@
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Asiste</label>
    	<div class="col-md-4">
-      <%= f.radio_button(:asiste, true) %> Asiste<br>
-      <%= f.radio_button(:asiste, false) %> Falto<br>
+      <%= f.radio_button(:asiste, true) %> Asistió<br>
+      <%= f.radio_button(:asiste, false) %> Faltó<br>
    	</div>
   </div>
   
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Fecha</label>
    	<div class="col-md-4">
-      <%= f.datetime_select :fch,  class: 'form-control' %>
+      <%= f.datetime_select :fch, 'data-provide' => "datepicker",  class: 'form-control', size: "40", width: "20", heigth: "62" %>
    	</div>
   </div>
-  
+
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Curso</label>
    	<div class="col-md-4">
@@ -39,7 +39,7 @@
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Profesor</label>
    	<div class="col-md-4">
-      <%= f.collection_select :profesor_id, Profesor.all, :id, :nombre, { }, class: "form-control", prompt: "Seleccione Profesor" %>
+      <%= f.collection_select :profesor_id, Profesor.all, :id, :nombre, {       }, class: "form-control", prompt: "Seleccione profesor" %>
    	</div>
   </div>
   

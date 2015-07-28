@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   
 
+  resources :answers
+  resources :questions
+  resources :surveys
+
+  resources :estados
+
   resources :acudientes do
     get :autocomplete_municipio_nombre, :on => :collection
   end
@@ -50,7 +56,7 @@ Rails.application.routes.draw do
   get 'static_pages/v2'
   get 'static_pages/v3'
   get 'static_pages/home2'
-  
+  get 'static_pages/manual'
   
   match '/home', to: 'static_pages#home',  via: 'get'
   match '/help',	to: 'static_pages#help',  via: 'get'
@@ -60,6 +66,7 @@ Rails.application.routes.draw do
   match '/v2', to: 'static_pages#v2',  via: 'get'
   match '/v3', to: 'static_pages#v3',  via: 'get'
   match '/home2', to: 'static_pages#home2',  via: 'get'
+  match '/manual', to: 'static_pages#manual',  via: 'get'
   
   root :to => 'static_pages#home'
 

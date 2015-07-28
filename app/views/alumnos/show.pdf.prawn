@@ -44,7 +44,7 @@ stroke_horizontal_rule
 pdf.move_down(100)
 formatted_text [
 
-{ :text => "Estimado cliente si su registro de alumnos presenta comunicarse ", :color => "267095" },
+{ :text => "Estimado cliente si su registro de alumnos presenta problemas comunicarse ", :color => "267095" },
 
  { :text => "555-555", :color => "0000FF"}]
  

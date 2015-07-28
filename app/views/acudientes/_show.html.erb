@@ -38,12 +38,12 @@
 
 <p>
   <strong>Tipo doc:</strong>
-  <%= @acudiente.tipo_doc %>
+  <%= @acudiente.tipo_doc.nombre %>
 </p>
 
 <p>
   <strong>Estado civil:</strong>
-  <%= @acudiente.estado_civil %>
+  <%= @acudiente.estado_civil.nombre %>
 </p>
 
 <p>
@@ -58,9 +58,8 @@
 
 <p>
   <strong>Municipio:</strong>
-  <%= @acudiente.municipio %>
+  <%= @acudiente.municipio.nombre %>
 </p>
 
-<%= link_to 'Edit', edit_acudiente_path(@acudiente) %> |
-<%= link_to 'Back', acudientes_path %>
+
 </div>

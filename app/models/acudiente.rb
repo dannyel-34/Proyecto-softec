@@ -5,11 +5,11 @@ class Acudiente < ActiveRecord::Base
   
   #mwetodos autocomplete
   def municipio_nombre
-      municipio.nombre if municipio
+    municipio.nombre if municipio
   end
 
   def municipio_nombre=(nombre)
-      self.municipio = Municipio.find_by_nombre(nombre)
+    self.municipio = Municipio.find_by_nombre(nombre)
   end
   
 end

@@ -61,5 +61,7 @@ class Alumno < ActiveRecord::Base
       self.municipio = Municipio.find_by_nombre(nombre)
   end 
   
+ has_attached_file :avatar, styles: { medium: '200x200>', thumb: '48x48>' }
+  
  
 end

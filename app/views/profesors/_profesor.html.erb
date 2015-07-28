@@ -1,13 +1,8 @@
 <tr id=<%= "profesor_#{profesor.id}" %>>
         <td><%= profesor.nombre %></td>
-        <td><%= profesor.primer_apellido %></td>
-        <td><%= profesor.segundo_apellido %></td>
-        <td><%= profesor.nombre_completo %></td>
-        <td><%= profesor.fch_nacimiento %></td>
         <td><%= profesor.direccion %></td>
         <td><%= profesor.telefono %></td>
         <td><%= profesor.doc_identidad %></td>
-        <td><%= profesor.tipo_doc_id %></td>
         <td><%= profesor.estado_civil_id %></td>
         <td><%= link_to profesor, remote: true, class: "btn btn-info btn-sm" do %>
         <span class="glyphicon glyphicon-eye-open"></span>

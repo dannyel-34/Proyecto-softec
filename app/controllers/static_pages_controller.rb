@@ -20,5 +20,8 @@ class StaticPagesController < ApplicationController
   def v3
   end
   
+  def manual
+  end
+  
 
 end

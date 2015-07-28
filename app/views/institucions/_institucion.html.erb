@@ -23,13 +23,13 @@
         </td>
     <% elsif can? :read, Institucion %>
         <td><%= link_to institucion, remote: true, class: "btn btn-info btn-sm"  do %>
-        <span class="glyphicon glyphicon-eye-open"></span>
+            <span class="glyphicon glyphicon-eye-open"></span>
         <% end %>
         </td>
         <td><%= link_to edit_institucion_path(institucion), class: "btn btn-warning btn-sm", remote: true do %>
-         <span class="glyphicon glyphicon-edit"></span>
+            <span class="glyphicon glyphicon-edit"></span>
         </td>
-        <% end %>
+    <% end %>
         
     <% end %>
 </tr>  

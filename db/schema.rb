@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715203901) do
+ActiveRecord::Schema.define(version: 20150727140136) do
 
   create_table "acudientes", force: true do |t|
     t.string   "nombre"
@@ -53,11 +53,24 @@ ActiveRecord::Schema.define(version: 20150715203901) do
     t.boolean  "genero"
     t.string   "email"
     t.string   "image"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "alumnos", ["estado_civil_id"], name: "index_alumnos_on_estado_civil_id"
   add_index "alumnos", ["municipio_id"], name: "index_alumnos_on_municipio_id"
   add_index "alumnos", ["tipo_doc_id"], name: "index_alumnos_on_tipo_doc_id"
+
+  create_table "answers", force: true do |t|
+    t.integer  "question_id"
+    t.string   "respuesta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
 
   create_table "assignments", force: true do |t|
     t.integer  "user_id"
@@ -156,6 +169,12 @@ ActiveRecord::Schema.define(version: 20150715203901) do
     t.datetime "updated_at"
   end
 
+  create_table "estados", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "grupos", force: true do |t|
     t.string   "nombre"
     t.string   "cod"
@@ -222,6 +241,15 @@ ActiveRecord::Schema.define(version: 20150715203901) do
   add_index "profesors", ["estado_civil_id"], name: "index_profesors_on_estado_civil_id"
   add_index "profesors", ["tipo_doc_id"], name: "index_profesors_on_tipo_doc_id"
 
+  create_table "questions", force: true do |t|
+    t.integer  "survey_id"
+    t.string   "pregunta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id"
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -239,6 +267,13 @@ ActiveRecord::Schema.define(version: 20150715203901) do
   end
 
   add_index "sucursals", ["institucion_id"], name: "index_sucursals_on_institucion_id"
+
+  create_table "surveys", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tipo_docs", force: true do |t|
     t.string   "nombre"

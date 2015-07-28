@@ -33,6 +33,11 @@
   <%= @assistance.fch %>
 </p>
 
+
+<p>
+  <%= link_to "PDF", assistance_path(@assistance, :format => 'pdf'), class: "btn btn-default"%>
+</p>
+
 </div>
 </div>
 </div>

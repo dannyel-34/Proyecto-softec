@@ -64,6 +64,7 @@
   <%= @alumno.doc %>
 </p>
 
+
 <p>
   <strong>Tipo doc:</strong>
   <%= @alumno.tipo_doc.nombre %>
@@ -74,6 +75,9 @@
   <%= @alumno.fch_nacimiento %>
 </p>
 
+<p>
+  <%= image_tag @alumno.avatar.url(:medium) %>
+</p>
 
 
 

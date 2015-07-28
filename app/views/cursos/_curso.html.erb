@@ -21,11 +21,11 @@
         <% end %>
         </td>
         <% elsif can? :read, Curso %>
-        <td><%= link_to curso, class: "btn btn-info", remote: true  do %>
+        <td><%= link_to curso, class: "btn btn-info btn-sm", remote: true  do %>
                 <span class="glyphicon glyphicon-eye-open"></span>
         <% end %>
         </td>
-        <td><%= link_to edit_curso_path(curso), class: "btn btn-warning", remote: true  do %>
+        <td><%= link_to edit_curso_path(curso), class: "btn btn-warning btn-sm", remote: true  do %>
         <span class="glyphicon glyphicon-edit"></span>
         <% end %>
         </td>

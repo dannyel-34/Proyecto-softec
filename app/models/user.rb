@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   
   def asignar_rol #Luego creamos el método asignar_rol     
     @user = User.last #Luego traemos el último usuario que se registro.
-    rol = Role.find_by name: 'comun' #Y tambien traemos el rol comun.
+    rol = Role.find_by name: 'coordinador' #Y tambien traemos el rol comun.
     Assignment.create(user_id: @user.id, role_id: rol.id) #Y aquí le asignamos el rol.
   end
   

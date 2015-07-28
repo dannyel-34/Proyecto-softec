@@ -6,12 +6,32 @@
         <td><%= acudiente.mail %></td>
         <td><%= acudiente.telefono %></td>
         <td><%= acudiente.documento %></td>
-        <td><%= acudiente.tipo_doc %></td>
-        <td><%= acudiente.estado_civil %></td>
+        <td><%= acudiente.tipo_doc.nombre %></td>
+        <td><%= acudiente.estado_civil.nombre %></td>
         <td><%= acudiente.fch %></td>
         <td><%= acudiente.direccion %></td>
-        <td><%= acudiente.municipio %></td>
-        <td><%= link_to 'Mostrar', acudiente, class="btn btn-info", remote: true  %></td>
-        <td><%= link_to 'Editar', edit_acudiente_path(acudiente), class="btn btn-warning", remote: true %></td>
-        <td><%= link_to 'Eliminar', acudiente, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class="btn btn-danger" %></td>
+        <td><%= acudiente.municipio.nombre %></td>
+        <% if can? :manage, :all, Acudiente %>
+        <td><%= link_to acudiente, class: "btn btn-info", remote: true do %>
+        <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_acudiente_path(acudiente), class: "btn btn-warning", remote: true do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        </td>
+        <td><%= link_to acudiente, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-danger" do %>
+        <span class="glyphicon glyphicon-remove-circle"></span>
+        <% end %>
+        </td>
+        <% elsif %>
+        <td><%= link_to acudiente, class: "btn btn-info btn-sm", remote: true do %>
+        <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
+        </td>
+        <td><%= link_to edit_acudiente_path(acudiente), class: "btn btn-warning btn-sm", remote: true do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        </td>
+        <% end %>
 </tr>  
