@@ -27,7 +27,7 @@ class AlumnosController < ApplicationController
       valores["municipio_id"] = params[:id_municipio] # captura el valor del id dem municipio del autocomplete
       respond_to do |format|
         if @alumno.update(valores)
-          format.html { redirect_to @alumno, notice: 'Alumno was successfully updated.' }
+          format.html { redirect_to @alumno, notice: 'Alumno se ha creado correctamente.' }
           format.json { render :show, status: :ok, location: @alumno }
         else
           format.html { render :edit }

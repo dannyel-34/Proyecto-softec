@@ -11,5 +11,8 @@ class Curso < ActiveRecord::Base
     #validar atributos unicos
     validates :descripcion, uniqueness: { message: "No se puede Repetir" } 
     validates :nombre, uniqueness: { message: "No se puede Repetir" }
+    
+    
+    
   
 end

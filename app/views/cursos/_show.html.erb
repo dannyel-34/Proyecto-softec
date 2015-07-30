@@ -23,6 +23,11 @@
   <strong>Fch fin:</strong>
   <%= @curso.fch_fin %>
 </p>
+
+
+<p>
+  <%= link_to "PDF", curso_path(@curso, :format => 'pdf'), class: "btn btn-default"%>
+</p>
 </div>
 </div>
 </div>

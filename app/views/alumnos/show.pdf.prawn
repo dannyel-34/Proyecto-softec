@@ -22,8 +22,6 @@ text "Telefono: #{@alumno.tel}"
 
 text "Direccion: #{@alumno.direccion}"
 
-text "Municipio: #{@alumno.municipio}"
-
 text "Celular: #{@alumno.celular}"
 
 text "Tipo documento: #{@alumno.tipo_doc.nombre}"

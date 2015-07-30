@@ -4,15 +4,15 @@ stroke_horizontal_rule
 
 pdf.move_down(30)
 
-  text "Estudiante: #{@assistance.alumno}"
+  text "Estudiante: #{@assistance.alumno.nombre_completo}"
 
-  text "Profesor: #{@assistance.profesor}"
+  text "Profesor: #{@assistance.profesor.nombre}"
 
-  text "Curso: #{@assistance.curso}"
+ text "Curso: #{@assistance.curso.nombre}"
 
-  text "Grupo: #{@assistance.grupo}"
+ text "Grupo: #{@assistance.grupo.nombre}"
 
-  text "Horario: #{@assistance.horario}"
+ text "Horario: #{@assistance.horario.asiste}"
 
   text "Fecha: #{@assistance.fch}"
   

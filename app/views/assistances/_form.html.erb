@@ -5,7 +5,6 @@
   <% if @assistance.errors.any? %>
 	<div id="error_explanation">
   	<h2><%= pluralize(@assistance.errors.count, "error") %> prohibited this assistance from being saved: </h2>
-
   	<ul>
   	<% @assistance.errors.full_messages.each do |message| %>
     	<li><%= message %></li>
@@ -13,28 +12,24 @@
   	</ul>
 	</div>
   <% end %>
-
   <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Estudiante: </label>
    	<div class="col-md-4">
       	<%= f.collection_select :alumno_id, Alumno.all, :id, :nombre_completo, {}, class: "form-control", prompt: "Seleccione Estudiante" %>
    	</div>
   </div>
-  
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Profesor: </label>
    	<div class="col-md-4">
       	<%= f.collection_select :profesor_id, Profesor.all, :id, :nombre,{}, class: "form-control", prompt: "Seleccione docente" %>
    	</div>
   </div>
-  
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Curso: </label>
    	<div class="col-md-4">
       	<%= f.collection_select :curso_id, Curso.all, :id, :nombre, {}, class: "form-control", prompt: "Seleccione curso" %>
    	</div>
   </div>
-  
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Grupo: </label>
    	<div class="col-md-4">
@@ -43,7 +38,6 @@
    	</div>
    	</div>
   </div>
-  
    <div class="form-group">
    	<label for="name" class="col-sm-3 control-label">Horario: </label>
    	<div class="col-md-4">

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  get 'cursos/import'
+
   resources :answers
   resources :questions
   resources :surveys
